@@ -1,7 +1,7 @@
 export class Llama {
-    constructor(
-        public name: string,
-        public age: number,
-        public _id: string
-    ){}
+    name: string;
+    age: number;
+    _id: string;
+    picture: string;
+    description: string;
 }

@@ -1,9 +1,13 @@
-<div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let llama of llamas">
-      {{ llama.name }}
-    </div>
-    <!-- <li>{{ llamas.name }}</li> -->
-    <button class="btn" (click)="fetchLlamas()">Click</button>
+<div class="col-md-4">
+  <div class="jumbotron">
+      <h1>{{ llama.name }}</h1>
+      <img src="{{llama.picture_url}}">
+      <h3> Age: {{ llama.age }} </h3>
+  </div>
+</div>
+<div class="col-md-8">
+  <div class="jumbotron">
+    <h2>Description:</h2>
+    <p>{{ llama.description }}</p>
   </div>
 </div>

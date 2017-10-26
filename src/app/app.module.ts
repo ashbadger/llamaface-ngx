@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupDetailsComponent } from './signup-details/signup-details.component';
 import { RootPageComponent } from './root-page/root-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

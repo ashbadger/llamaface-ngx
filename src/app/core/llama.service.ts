@@ -5,19 +5,19 @@ import * as queryString from 'query-string';
 
 import { Llama } from './llama.model';
 
-interface LlamasResponse {
-    llamas: Llama[];
-  }
-
 @Injectable()
 export class LlamaService {
+    private llamasUrl = 'https://stormy-wave-45173.herokuapp.com/llamas'
 
     constructor(private http: HttpClient) {}    
-    private llamasUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/'
-    getLlamas(params = {}): Observable<LlamasResponse> {
+    getLlamas(params = {}): Observable<Llama[]> {
         let paramsString = queryString.stringify(params);
         let httpParams = new HttpParams({ fromString: paramsString });
-        return this.http.get<LlamasResponse>(this.llamasUrl, {params: httpParams });
+        return this.http.get<Llama[]>(this.llamasUrl, {params: httpParams });
     }
 
+    getLlama(id: string): Observable<Llama> {
+        const url = `${this.llamasUrl}/${id}`;
+        return this.http.get<Llama>(url);
+    }
 }

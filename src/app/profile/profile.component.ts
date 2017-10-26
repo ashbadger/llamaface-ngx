@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LlamaService } from '../core/llama.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Llama } from '../core/llama.model'
 
 @Component({
@@ -10,21 +11,21 @@ import { Llama } from '../core/llama.model'
 })
 export class ProfileComponent implements OnInit {
 
-  llamas: Llama[] = [];
+  llama: Llama = new Llama();
 
   constructor(
+    private route: ActivatedRoute,
     private llamaService: LlamaService
   ) { }
 
-  ngOnInit() {
-    this.fetchLlamas()
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const llamaId = ''+params.get('id');
+      this.fetchLlama(llamaId);
+    });
   }
 
-  fetchLlamas() {
-    this.llamaService
-      .getLlamas()
-      .subscribe(response => {
-        this.llamas = response.llamas
-      }, err => console.log("Something went wrong."));
+  fetchLlama(id: string): void {
+    this.llamaService.getLlama(id).subscribe(llama => this.llama = llama);
   }
 }
