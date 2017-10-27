@@ -1,0 +1,20 @@
+.form-horizontal {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.glyphicon-user, .glyphicon-remove-circle {
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 40px;    
+}
+
+img {
+    width: 200px;
+    margin-top: -20px;
+    padding-left: 20px;
+}
+
+.navbar {
+    padding: 10px;
+}

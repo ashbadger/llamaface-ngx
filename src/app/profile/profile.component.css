@@ -7,15 +7,11 @@ img {
     display: block;
 }
 
-* {
-    text-align: center;
+.jumbotron {
+    margin-top: 5px;
 }
 
 p {
     margin-left: 10%;
     margin-right: 10%;
-}
-
-.jumbotron {
-    margin-top: 50px;
 }

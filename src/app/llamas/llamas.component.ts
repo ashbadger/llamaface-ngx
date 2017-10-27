@@ -4,11 +4,11 @@ import { Llama } from '../core/llama.model'
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  templateUrl: './llamas.component.html',
+  styleUrls: ['./llamas.component.css'],
   providers: [ LlamaService ]
 })
-export class SearchComponent implements OnInit {
+export class LlamasComponent implements OnInit {
 
   llamas: Llama[] = [];
 
