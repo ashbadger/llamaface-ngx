@@ -4,4 +4,5 @@ export class Llama {
     _id: string;
     picture: string;
     description: string;
+    location: string;
 }
