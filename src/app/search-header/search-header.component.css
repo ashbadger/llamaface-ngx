@@ -1,6 +1,7 @@
 .form-horizontal {
-    margin-top: 15px;
-    margin-left: 30px;
+    margin-top: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .glyphicon-user, .glyphicon-remove-circle {
@@ -11,7 +12,7 @@
 
 img {
     width: 200px;
-    margin-top: -20px;
+    margin-top: -25px;
     padding-left: 20px;
 }
 

@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import * as queryString from 'query-string';
+import 'rxjs/add/operator/map'
+
+import { Llama } from './llama.model';
+
+@Injectable()
+export class LoginService {
+    // private loginUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/login'
+    private loginUrl = 'http://localhost:3000/llamas/login'
+
+    llama : Llama = new Llama();
+
+    constructor(private http: HttpClient) {}  
+    login(llama: Llama) {
+        return this.http.post(this.loginUrl, llama)
+    }
+    
+}
