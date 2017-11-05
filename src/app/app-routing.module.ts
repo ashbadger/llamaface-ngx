@@ -1,3 +1,5 @@
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component'
@@ -6,11 +8,12 @@ import { SignupDetailsComponent } from './signup-details/signup-details.componen
 import { LlamasComponent } from './llamas/llamas.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'llamas', component: LlamasComponent },
   { path: 'login', component: RootPageComponent },
   { path: 'llamas/:id', component: ProfileComponent},
-  { path: 'account', component: SignupDetailsComponent}
+  { path: 'account', component: SignupDetailsComponent},
+  { path: 'search', component: SearchResultsComponent}
 ];
 
 @NgModule({

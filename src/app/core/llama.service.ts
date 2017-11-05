@@ -7,8 +7,7 @@ import { Llama } from './llama.model';
 
 @Injectable()
 export class LlamaService {
-    // private llamasUrl = 'https://stormy-wave-45173.herokuapp.com/llamas'
-    private llamasUrl = 'http://localhost:3000/llamas'
+    private llamasUrl = 'https://stormy-wave-45173.herokuapp.com/llamas'
     private auth_header = {headers: new HttpHeaders().set('x-auth', localStorage.getItem('currentUser'))}
 
     constructor(private http: HttpClient) {}    
@@ -25,11 +24,11 @@ export class LlamaService {
 
     createLlama(llama : Llama) {
         let url = this.llamasUrl;
-        return this.http.post<Llama>(url, llama).subscribe();
+        return this.http.post<Llama>(url, llama);
     }
 
     getUser(): Observable<Llama> {
-        let url = `http://localhost:3000/me`;
+        let url = `https://stormy-wave-45173.herokuapp.com/me`;
         return this.http.get<Llama>(url, this.auth_header);
     }
 

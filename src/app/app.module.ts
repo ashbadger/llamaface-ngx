@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginBoxComponent } from './root-page/login-box/login-box.component';
@@ -11,9 +12,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { ProfileComponent } from './profile/profile.component';
 import { SignupDetailsComponent } from './signup-details/signup-details.component';
 import { RootPageComponent } from './root-page/root-page.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchHeaderComponent } from './search-header/search-header.component'
+import { SearchHeaderComponent } from './search-header/search-header.component';
 
 @NgModule({
   declarations: [

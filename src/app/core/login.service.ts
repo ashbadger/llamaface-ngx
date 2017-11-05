@@ -8,8 +8,7 @@ import { Llama } from './llama.model';
 
 @Injectable()
 export class LoginService {
-    // private loginUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/login'
-    private loginUrl = 'http://localhost:3000/llamas/login'
+    private loginUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/login'
 
     llama : Llama = new Llama();
 
@@ -17,5 +16,8 @@ export class LoginService {
     login(llama: Llama) {
         return this.http.post(this.loginUrl, llama)
     }
-    
+
+    userLoggedIn() {
+        return localStorage.getItem('currentUser') ? true : false
+      }    
 }

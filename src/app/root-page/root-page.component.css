@@ -1,7 +1,10 @@
 .jumbotron {
     text-align: center;
+    color: white;
     align-content: center;
-    padding: 5em inherit !important;
+    margin-left: 10%;
+    padding-top: 30px;
+    background-color: #ff471a;
 }
 
 .container {

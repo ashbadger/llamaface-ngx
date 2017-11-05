@@ -20,13 +20,12 @@ export class LoginBoxComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onLogin() {
     let llama = this.llama
+    
     return this.loginService.login(llama)
-    // .subscribe();
     .subscribe((res) => {
       localStorage.setItem('currentUser', res['token'])
       this.router.navigate(['/llamas']);

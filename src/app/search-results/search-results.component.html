@@ -1,3 +1,29 @@
-<p>
-  search-results works!
-</p>
+<app-search-header></app-search-header>
+<div>
+  <div class="row" *ngIf="llamas?.length > 0;else nollamas">
+    <div class="col-md-12" *ngFor="let llama of llamas">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="llamas/{{ llama._id }}">
+              <img src="{{ llama.picture_url}}">
+            </a>
+          </div>
+          <div class="col-md-10">
+            <a href="llamas/{{ llama._id }}">
+              <h3>{{ llama.name }}</h3>
+            </a>
+            <h3>Age: {{ llama.age }}</h3>
+            <h3>Location: {{ llama.location }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #nollamas>
+    <div class="jumbotron" id="empty">
+      <h2>We couldn't find any llamas from that search! Search for someone else!</h2>
+      <img src="../../assets/images/alpacaderp.jpg">
+    </div>
+  </ng-template>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LlamaService } from '../../core/llama.service'
 import { Llama } from '../../core/llama.model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-signup-box',
@@ -13,14 +14,15 @@ export class SignupBoxComponent implements OnInit {
   llama: Llama = new Llama();
 
   constructor(
-    private llamaService: LlamaService
+    private llamaService: LlamaService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   addLlama(): void {
-    this.llamaService.createLlama(this.llama)
+    this.llamaService.createLlama(this.llama).subscribe()
   }
 
 }

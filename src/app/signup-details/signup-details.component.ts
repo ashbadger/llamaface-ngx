@@ -27,7 +27,6 @@ export class SignupDetailsComponent implements OnInit {
   }
 
   saveUser(llama: Llama) {
-    console.log(llama)
     this.llamaService.updateUser(llama).subscribe();
   }
 }

@@ -1,7 +1,9 @@
 import { query } from '@angular/core/src/animation/dsl';
-import { Injectable, Query } from '@angular/core';
+import { Injectable, Query, EventEmitter } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import * as queryString from 'query-string';
 import 'rxjs/add/operator/map';
 
@@ -9,14 +11,21 @@ import { Llama } from './llama.model';
 
 @Injectable()
 export class SearchService {
-    // private loginUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/login'
-    private searchUrl = 'http://localhost:3000/search'
+    private searchUrl = 'https://stormy-wave-45173.herokuapp.com/search'
+    searchEvent: EventEmitter<Llama[]> = new EventEmitter();
 
-    llama : Llama = new Llama();
+    llamas: Llama[] = [];
 
-    constructor(private http: HttpClient) {}  
+    constructor(
+        private http: HttpClient,
+        private router: Router
+    ) {}  
 
     search(query: Query) {
-        return this.http.get(`${this.searchUrl}?q=${query}`)
+        return this.http.get<Llama[]>(`${this.searchUrl}?q=${query}`)
+    }
+
+    getSearchResults() {
+
     }
 }
