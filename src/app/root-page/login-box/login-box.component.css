@@ -11,4 +11,5 @@ img {
 #failedAttempt {
     color: red;
     text-align: center;
+    margin-top: 5px;
 }
