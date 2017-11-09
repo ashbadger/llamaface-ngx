@@ -19,5 +19,5 @@ export class LoginService {
 
     userLoggedIn() {
         return localStorage.getItem('currentUser') ? true : false
-      }    
+    }    
 }

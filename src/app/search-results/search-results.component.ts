@@ -1,6 +1,6 @@
 import { SearchService } from '../core/search.service';
 import { Component, OnChanges, OnInit, Query } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Llama } from '../core/llama.model';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SearchResultsComponent implements OnInit {
 
-  llamas: Llama[] = [];
+  llamas: Llama[];
   query: string = '';
 
   constructor(
@@ -25,16 +25,17 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe((query) => {
-      this.query = query.q
-      this.getSearch(this.query);
+      this.query = query.q;
+
+      let httpParams = new HttpParams();
+      httpParams.set('q', this.query);
+
+      this.getSearch();
     }) 
   }
 
-  getSearch(query) {
-    const search = new URLSearchParams();
-    search.set('q', query.q as string);
-
-    this.searchService.search(query)
+  getSearch() { 
+    this.searchService.getSearch(this.query)
     .subscribe(llamas => this.llamas = llamas)
   }
 }

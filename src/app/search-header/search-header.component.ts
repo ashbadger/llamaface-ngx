@@ -35,7 +35,7 @@ export class SearchHeaderComponent implements OnInit {
     localStorage.removeItem('currentUser');
   }
 
-  searchLlamas(query) {
-    return this.router.navigate(['/search'], { queryParams: { q: query } })
+  searchLlamas() {
+    this.router.navigate(['/search'], { queryParams: { q: this.query } });
   }
 }

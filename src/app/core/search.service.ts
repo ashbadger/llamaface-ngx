@@ -21,11 +21,7 @@ export class SearchService {
         private router: Router
     ) {}  
 
-    search(query: Query) {
+    getSearch(query) {
         return this.http.get<Llama[]>(`${this.searchUrl}?q=${query}`)
-    }
-
-    getSearchResults() {
-
     }
 }

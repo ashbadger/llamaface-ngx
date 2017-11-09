@@ -9,6 +9,10 @@
  margin-top: 20px;
 }
 
+#no-results {
+  text-align: center;
+}
+
 h3 {
   margin-left: 50px;  
 }

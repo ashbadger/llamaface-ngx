@@ -14,6 +14,7 @@ import { Llama } from '../../core/llama.model'
 export class LoginBoxComponent implements OnInit {
 
   llama: Llama = new Llama();
+  failedAttempt;
 
   constructor(
     private loginService: LoginService,
@@ -29,6 +30,8 @@ export class LoginBoxComponent implements OnInit {
     .subscribe((res) => {
       localStorage.setItem('currentUser', res['token'])
       this.router.navigate(['/llamas']);
+    }, (error) => {
+      this.failedAttempt = true;
     })
   }
 }

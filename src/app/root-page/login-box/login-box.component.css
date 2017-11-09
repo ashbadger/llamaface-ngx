@@ -7,3 +7,8 @@ img {
 .navbar {
     padding: 10px;
 }
+
+#failedAttempt {
+    color: red;
+    text-align: center;
+}

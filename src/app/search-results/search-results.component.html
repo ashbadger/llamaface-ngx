@@ -1,6 +1,12 @@
 <app-search-header></app-search-header>
 <div>
-  <div class="row" *ngIf="llamas?.length > 0;else nollamas">
+  <div id="no-results" *ngIf="llamas?.length == 0">
+    <div class="jumbotron">
+      <h2>We couldn't find any llamas from that search! Search for someone else!</h2>
+      <img src="../../assets/images/alpacaderp.jpg">
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-12" *ngFor="let llama of llamas">
       <div class="jumbotron">
         <div class="row">
@@ -20,10 +26,4 @@
       </div>
     </div>
   </div>
-  <ng-template #nollamas>
-    <div class="jumbotron" id="empty">
-      <h2>We couldn't find any llamas from that search! Search for someone else!</h2>
-      <img src="../../assets/images/alpacaderp.jpg">
-    </div>
-  </ng-template>
 </div>
