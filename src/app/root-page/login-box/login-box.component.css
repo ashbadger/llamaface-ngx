@@ -13,3 +13,20 @@ img {
     text-align: center;
     margin-top: 5px;
 }
+
+@media (max-width: 767px){
+    .input-group {
+        margin-top: 10px;
+        width: 80%;
+    }
+
+    .btn {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+	* {
+        border-top: 0px;
+        border-bottom: 0px;
+	}
+}

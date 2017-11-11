@@ -5,6 +5,7 @@
     margin-left: 10%;
     padding-top: 30px;
     background-color: #ff471a;
+    border-radius: 5px;
 }
 
 .container {
@@ -19,4 +20,19 @@ img {
 
 .navbar {
     padding: 10px;
+}
+
+@media (max-width: 991px){
+    .jumbotron {
+        margin-left: 0px;
+    }
+    .col-md-6 {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+	* {
+		border-top: 0px;
+	}
 }

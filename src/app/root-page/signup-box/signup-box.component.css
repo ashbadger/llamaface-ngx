@@ -55,4 +55,36 @@ h3 {
 
 .panel {
 	margin-right: 50px;
+	padding-bottom: 14px;
+}
+
+@media (max-width: 991px){
+	div {
+		width: 100%;
+	}
+
+	.row {
+		width: 100%;
+	}
+
+	.col-md-6 {
+		width: 105.5%;
+		margin-top: 15px;
+	}
+
+	.form-group {
+		margin-top: 0px;
+	}
+}
+
+@media (max-width: 829px) {
+	.col-md-6 {
+		width: 106.5%;
+	}
+}
+
+@media (max-width: 450px) {
+	.col-md-6 {
+		width: 112%;
+	}
 }
