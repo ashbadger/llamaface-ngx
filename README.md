@@ -6,6 +6,6 @@ llamaFace is f*cebook for llamas.
 
 **technologies**: angular 2, jwt, rxjs, heroku.
 
-view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/)
+view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/llamas)
 
 *backend/api can be found (mongodb, express) here: [llamaface-api](https://github.com/ashbadger/llamaface-api)*
