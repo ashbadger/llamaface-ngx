@@ -5,7 +5,7 @@ import { Llama } from '../../core/llama.model'
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
-let _ = require('lodash')
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-signup-box',
