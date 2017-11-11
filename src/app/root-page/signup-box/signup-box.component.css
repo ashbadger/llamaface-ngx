@@ -23,12 +23,16 @@ input {
 	font-size: 18px;
 }
 
-.ng-valid[required], .ng-valid.required  {
-	border-left: 5px solid #42A948; /* green */
-  }
+[formgroupname="password"].form-group.ng-valid input {
+	border-left: 5px solid #42A948;
+}
+  
+.ng-invalid input  {
+	border-left: 5px solid #a94442; 
+}
 
-.ng-invalid:not(form)  {
-	border-left: 5px solid #a94442; /* red */
+input#email.ng-valid, input#name.ng-valid {
+	border-left: 5px solid #42A948;
 }
 
 .jumbotron {
@@ -39,7 +43,7 @@ input {
 	margin-right: 50px;
 }
 
-#requiredFields, #alreadyExists {
+#alreadyExists {
 	text-align: center;
 	color: red;
 	margin-top: 10px;
@@ -47,4 +51,8 @@ input {
 
 h3 {
 	text-align: center;
+}
+
+.panel {
+	margin-right: 50px;
 }
