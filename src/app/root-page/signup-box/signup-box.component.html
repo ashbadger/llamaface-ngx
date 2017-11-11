@@ -8,22 +8,15 @@
         <div class="panel-body">
           <form role="form">
             <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                  <input required [(ngModel)]="llama.name" type="text" name="name" id="name" class="form-control input-sm" placeholder="First Name">
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input required type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                  <input required [(ngModel)]="llama.name" type="text" name="name" id="name" class="form-control input-sm" placeholder="Full Name">
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <input required [(ngModel)]="llama.email" type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
             </div>
-
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
@@ -36,10 +29,10 @@
                 </div>
               </div>
             </div>
-          
           <input (click)="addLlama()" type="submit" value="Create Account" class="btn btn-primary btn-block">
-        
         </form>
+        <div id="alreadyExists" *ngIf="alreadyExists">*This account already exists. Please login.</div>
+        <div id="requiredFields" *ngIf="!requiredFields">*Please fill out the required fields.</div>
       </div>
     </div>
   </div>

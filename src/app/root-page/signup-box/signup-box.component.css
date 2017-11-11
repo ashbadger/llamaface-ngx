@@ -38,3 +38,13 @@ input {
 .container {
 	margin-right: 50px;
 }
+
+#requiredFields, #alreadyExists {
+	text-align: center;
+	color: red;
+	margin-top: 10px;
+}
+
+h3 {
+	text-align: center;
+}

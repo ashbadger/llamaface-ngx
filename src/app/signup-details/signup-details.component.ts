@@ -11,6 +11,7 @@ import { Llama } from '../core/llama.model';
 export class SignupDetailsComponent implements OnInit {
 
   llama: Llama = new Llama();
+  saved = false;
 
   constructor(
     private llamaService : LlamaService
@@ -27,6 +28,8 @@ export class SignupDetailsComponent implements OnInit {
   }
 
   saveUser(llama: Llama) {
-    this.llamaService.updateUser(llama).subscribe();
+    this.llamaService.updateUser(llama).subscribe(() => {
+      this.saved = true;
+    });
   }
 }

@@ -1,13 +1,14 @@
-body {
-    background-color: #eee;
-}
-
 *[role="form"] {
     max-width: 530px;
     padding: 15px;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 0.3em;
+}
+
+.jumbotron {
+    margin-top: 100px;
+    max-width: 350px;
 }
 
 *[role="form"] h2 {
@@ -17,4 +18,9 @@ body {
 
 h2 {
     padding-left: 60px;
+}
+
+#saved {
+    color: green;
+    text-align: center;
 }
