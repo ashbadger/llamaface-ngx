@@ -10,6 +10,10 @@
     margin-left: 40px;    
 }
 
+.glyphicon-remove-circle {
+    margin-right: 15px;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -22,4 +26,32 @@ img {
 
 .navbar {
     padding: 10px;
+}
+
+.navbar-center
+{
+   position: absolute;
+   width: 50%;
+   left: 25%;
+   text-align: center;
+}
+
+.navbar-toggle {
+    margin-top: -40px;
+}
+
+.navbar-default .navbar-collapse {
+    border-top: none;
+}
+
+
+@media (max-width: 767px) {
+    .navbar-center {
+        width: 75%;
+        left: 5%;
+    }
+
+    .glyphicon-user, .glyphicon-remove-circle {
+        margin-left: 20px;    
+    }
 }

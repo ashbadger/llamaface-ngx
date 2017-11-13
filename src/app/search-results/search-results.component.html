@@ -10,12 +10,12 @@
     <div class="col-md-12" *ngFor="let llama of llamas">
       <div class="jumbotron">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-2 col-sm-2 col-xs-2">
             <a href="llamas/{{ llama._id }}">
               <img src="{{ llama.picture_url}}">
             </a>
           </div>
-          <div class="col-md-10">
+          <div class="col-md-10 col-sm-10 col-xs-10">
             <a href="llamas/{{ llama._id }}">
               <h3>{{ llama.name }}</h3>
             </a>
