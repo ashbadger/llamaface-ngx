@@ -12,7 +12,7 @@
 }
 
 *[role="form"] h2 {
-    margin-left: 5em;
+    margin-left: 35%;
     margin-bottom: 1em;
 }
 
@@ -23,4 +23,24 @@ h2 {
 #saved {
     color: green;
     text-align: center;
+}
+
+@media (max-width: 767px) {
+    h2 {
+        padding-left: 0px;
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 535px) {
+    h2 {
+        padding-left: 0px;
+        margin-left: 25% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .jumbotron {
+        display: none;
+    }
 }
