@@ -30,3 +30,25 @@ h2 {
   padding-right: 25%;
   padding-bottom: 30px;
 }
+
+@media (max-width: 829px) {
+	img {
+		width: 75%;
+	}
+}
+
+@media (max-width: 636px) {
+  #no-results h2 {
+    font-size: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media (max-width: 466px) {
+  #no-results h2 {
+    font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
