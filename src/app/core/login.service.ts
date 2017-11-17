@@ -8,7 +8,7 @@ import { Llama } from './llama.model';
 
 @Injectable()
 export class LoginService {
-    private loginUrl = 'https://stormy-wave-45173.herokuapp.com/llamas/login'
+    private loginUrl = 'https://llamaface-api.herokuapp.com/llamas/login'
 
     llama : Llama = new Llama();
 
