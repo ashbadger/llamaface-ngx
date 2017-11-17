@@ -8,6 +8,11 @@
     border-radius: 5px;
 }
 
+.navbar-default, .navbar-collapse {
+    border-top: 0px;
+    border-color: none;
+}
+
 .container {
     align-content: center;
 }
@@ -31,8 +36,4 @@ img {
         margin-left: 15%;
         margin-right: 15%;
     }
-
-	* {
-		border-top: 0px;
-	}
 }
