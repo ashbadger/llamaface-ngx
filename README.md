@@ -4,7 +4,7 @@ llamaFace is f*cebook for llamas.
 
 **functionality**: create an account, edit/save user account, search for users.
 
-**technologies**: angular 2, jwt, rxjs, heroku.
+**technologies**: angular 2, jwt, rxjs, heroku, typescript, bootstrap.
 
 view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/llamas)
 
