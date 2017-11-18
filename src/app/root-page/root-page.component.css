@@ -10,11 +10,15 @@
 
 .navbar-default, .navbar-collapse {
     border-top: 0px;
-    border-color: none;
 }
 
 .container {
     align-content: center;
+}
+
+h1 {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 img {
@@ -37,3 +41,4 @@ img {
         margin-right: 15%;
     }
 }
+
