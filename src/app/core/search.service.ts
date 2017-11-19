@@ -11,7 +11,7 @@ import { Llama } from './llama.model';
 
 @Injectable()
 export class SearchService {
-    private searchUrl = 'https://llamaface-api.herokuapp.com/search'
+    private searchUrl = 'https://llamaface-api.herokuapp.com/llamas/search'
     searchEvent: EventEmitter<Llama[]> = new EventEmitter();
 
     llamas: Llama[] = [];

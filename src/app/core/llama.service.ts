@@ -28,7 +28,7 @@ export class LlamaService {
     }
 
     getUser(): Observable<Llama> {
-        let url = `https://llamaface-api.herokuapp.com/me`;
+        let url = `https://llamaface-api.herokuapp.com/llamas/me`;
         return this.http.get<Llama>(url, this.auth_header);
     }
 
