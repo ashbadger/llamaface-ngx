@@ -4,10 +4,10 @@
     padding-left: 50px;
 }
 
-.glyphicon-user, .glyphicon-remove-circle {
+.glyphicon-user, .glyphicon-remove-circle, .glyphicon-cog {
     font-size: 30px;
     margin-top: 15px;
-    margin-left: 40px;    
+    margin-left: 20px;    
 }
 
 .glyphicon-remove-circle {
@@ -51,8 +51,12 @@ img {
         left: 5%;
     }
 
-    .glyphicon-user, .glyphicon-remove-circle {
-        margin-left: 20px;    
+    .glyphicon-user, .glyphicon-remove-circle, .glyphicon-cog {
+        margin-left: 10px;    
+    }
+
+    .glyphicon-remove-circle {
+        margin-right: 5px;
     }
 }
 

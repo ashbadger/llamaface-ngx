@@ -2,7 +2,11 @@
 <div>
   <div id="no-results" *ngIf="llamas?.length == 0">
     <div class="jumbotron">
-      <h2>We couldn't find any llamas from that search! Search for someone else!</h2>
+      <h2>
+        We couldn't find any llamas from that search! Search for someone else or 
+        <a id="all" href="/llamas">click here to view all llamas</a>
+        !
+      </h2>
       <img src="../../assets/images/alpacaderp.jpg">
     </div>
   </div>

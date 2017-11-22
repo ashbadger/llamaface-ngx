@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if(this.loginService.userLoggedIn() == true){
-      this.router.navigate(['/llamas']);
+      this.router.navigate(['/posts']);
     } else {
       this.router.navigate(['/login'])
     }

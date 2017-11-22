@@ -14,6 +14,7 @@ import { SignupDetailsComponent } from './signup-details/signup-details.componen
 import { RootPageComponent } from './root-page/root-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchHeaderComponent } from './search-header/search-header.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SearchHeaderComponent } from './search-header/search-header.component';
     ProfileComponent,
     SignupDetailsComponent,
     RootPageComponent,
-    SearchHeaderComponent
+    SearchHeaderComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

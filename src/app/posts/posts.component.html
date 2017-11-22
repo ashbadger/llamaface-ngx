@@ -1,0 +1,41 @@
+<app-search-header></app-search-header>
+<div>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="form-group">
+          <textarea [(ngModel)]="post.text" type="text" id="post" name="post" class="form-control" style="resize:vertical" placeholder="What's on your mind, {{ user?.name }}?"></textarea>
+          <button (click)="savePost(post); post.text = ''" type="submit" class="btn btn-primary btn-block">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12" *ngFor="let post of posts">
+      <div class="jumbotron">
+          <div *ngIf="post.user?._id == user._id" class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a (click)="removePost(post._id)">Delete Post</a></li>
+            </ul>
+          </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <h3>
+              <a href="llamas/{{ post.user?._id}}">{{ post.user?.name }}</a>
+            </h3>
+            <a href="llamas/{{ post.user?._id }}">
+              <img src="{{ post.user?.picture_url}}">
+            </a>
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+            <p id="description">{{ post.text }}</p>
+            <p id="posted">posted at {{ post.createdAt | date:'medium' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

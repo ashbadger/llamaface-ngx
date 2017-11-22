@@ -28,8 +28,11 @@
         </form>
       </nav>
       <nav class="nav navbar-nav navbar-right">
-        <a href="/account">
+        <a href="/llamas/{{ user._id}}">
           <span class="glyphicon glyphicon-user"></span>
+        </a>
+        <a href="/account">
+          <span class="glyphicon glyphicon-cog"></span>
         </a>
         <a href="/">
           <span (click)='logout()' class="glyphicon glyphicon-remove-circle"></span>

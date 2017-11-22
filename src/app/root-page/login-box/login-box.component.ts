@@ -29,7 +29,7 @@ export class LoginBoxComponent implements OnInit {
     return this.loginService.login(llama)
     .subscribe((res) => {
       localStorage.setItem('currentUser', res['token'])
-      this.router.navigate(['/llamas']);
+      this.router.navigate(['/posts']);
     }, (error) => {
       this.failedAttempt = true;
     })

@@ -2,10 +2,11 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component'
-import { RootPageComponent } from './root-page/root-page.component'
-import { SignupDetailsComponent } from './signup-details/signup-details.component'
-import { LlamasComponent } from './llamas/llamas.component'
+import { ProfileComponent } from './profile/profile.component';
+import { RootPageComponent } from './root-page/root-page.component';
+import { SignupDetailsComponent } from './signup-details/signup-details.component';
+import { LlamasComponent } from './llamas/llamas.component';
+import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: RootPageComponent },
   { path: 'llamas/:id', component: ProfileComponent},
   { path: 'account', component: SignupDetailsComponent},
-  { path: 'search', component: SearchResultsComponent}
+  { path: 'search', component: SearchResultsComponent},
+  { path: 'posts', component: PostsComponent}
 ];
 
 @NgModule({

@@ -31,6 +31,15 @@ h2 {
   padding-bottom: 30px;
 }
 
+a:hover#all {
+  background-color: transparent !important; 
+  text-decoration: none !important; 
+}
+
+a#all {
+  color: inherit;
+}
+
 @media (max-width: 829px) {
 	img {
 		width: 75%;
