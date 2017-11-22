@@ -14,7 +14,7 @@ import { PostService } from '../core/posts.service'
 export class ProfileComponent implements OnInit {
 
   llama: Llama = new Llama();
-  posts: Post;
+  posts: Post[] = [];
   user: Llama;
 
   constructor(

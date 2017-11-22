@@ -19,9 +19,9 @@ export class PostService {
         return this.http.get<Post>(url);
     }
 
-    getUserPosts(id: string): Observable<Post> {
+    getUserPosts(id: string): Observable<Post[]> {
         const url = `${this.postsUrl}/user/${id}`;
-        return this.http.get<Post>(url);
+        return this.http.get<Post[]>(url);
     }
 
     createPost(post : Post) {
