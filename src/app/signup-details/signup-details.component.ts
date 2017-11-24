@@ -39,4 +39,8 @@ export class SignupDetailsComponent implements OnInit {
       this.saved = true;
     });
   }
+
+  deleteUser(id: string){
+    this.llamaService.removeUser(id).subscribe(() => this.router.navigate(['/login']))
+  }
 }

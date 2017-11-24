@@ -25,6 +25,10 @@ h2 {
     text-align: center;
 }
 
+.modal-dialog {
+    margin-top: 10% !important;
+}
+
 @media (max-width: 767px) {
     h2 {
         padding-left: 0px;

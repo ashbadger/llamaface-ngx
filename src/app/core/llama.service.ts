@@ -36,4 +36,9 @@ export class LlamaService {
         let url = `${this.llamasUrl}/${llama._id}`;
         return this.http.patch<Llama>(url, llama, this.auth_header);
     }
+
+    removeUser(id : String): Observable<Llama> {
+        const url = `${this.llamasUrl}/${id}`;
+        return this.http.delete<Llama>(url, this.auth_header);
+    }
 }
