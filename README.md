@@ -2,10 +2,10 @@
 
 llamaFace is f*cebook for llamas.
 
-**functionality**: create an account, edit/save user account, search for users.
+**functionality**: create an account, edit/delete user account, search for users, view user profiles, make/delete posts.
 
 **technologies**: angular 2, jwt, rxjs, heroku, typescript, bootstrap.
 
-view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/llamas)
+view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/posts)
 
 *backend/api can be found (mongodb, express) here: [llamaface-api](https://github.com/ashbadger/llamaface-api)*
