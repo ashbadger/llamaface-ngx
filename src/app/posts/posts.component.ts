@@ -16,7 +16,8 @@ export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
   post: Post = new Post();
-  user: Llama = new Llama();
+  user = undefined;
+  failedLogin = false;
 
   constructor(
     private postService: PostService,
@@ -43,7 +44,9 @@ export class PostsComponent implements OnInit {
   }
 
   fetchCurrentUser(){
-    this.llamaService.getUser().subscribe(user => this.user = user)
+    this.llamaService.getUser().subscribe(user => {
+      this.user = user
+    }, () => this.failedLogin = true)
   }
 
   fetchLlama(id: string){
