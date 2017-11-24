@@ -28,7 +28,10 @@
         </form>
       </nav>
       <nav class="nav navbar-nav navbar-right">
-        <a href="/llamas/{{ user._id}}">
+        <a *ngIf="user" href="/llamas/{{ user._id}}">
+          <span class="glyphicon glyphicon-user"></span>
+        </a>
+        <a *ngIf="!user" href="/login">
           <span class="glyphicon glyphicon-user"></span>
         </a>
         <a href="/account">
