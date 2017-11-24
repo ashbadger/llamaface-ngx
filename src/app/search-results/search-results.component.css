@@ -21,6 +21,10 @@ h3 {
   margin-left: 50px;  
 }
 
+a#all{
+  color: darkgray;
+}
+
 #empty {
   text-align: center;
 }
@@ -34,10 +38,6 @@ h2 {
 a:hover#all {
   background-color: transparent !important; 
   text-decoration: none !important; 
-}
-
-a#all {
-  color: inherit;
 }
 
 @media (max-width: 829px) {
