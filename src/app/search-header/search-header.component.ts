@@ -36,7 +36,10 @@ export class SearchHeaderComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    this.llamaService.removeAuthToken().subscribe(() => {
+      localStorage.removeItem('currentUser');
+      this.router.navigate(['/login']);
+    }, (err) => this.router.navigate(['/login']));
   }
 
   searchLlamas() {

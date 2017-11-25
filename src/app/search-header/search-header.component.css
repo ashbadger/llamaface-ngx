@@ -12,6 +12,17 @@
 
 .glyphicon-remove-circle {
     margin-right: 15px;
+    margin-top: -25px;
+    margin-left: 5px;
+    color: #337AB7;
+}
+
+.glyphicon-remove-circle:hover {
+    color: #23527C;
+}
+
+button:focus {
+    outline:none;
 }
 
 a:hover {
@@ -56,7 +67,11 @@ img {
     }
 
     .glyphicon-remove-circle {
-        margin-right: 5px;
+        margin-left: -5px;
+    }
+
+    .glyphicon-remove-circle {
+        margin-right: -10px;
     }
 }
 

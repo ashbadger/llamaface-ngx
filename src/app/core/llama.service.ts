@@ -28,7 +28,7 @@ export class LlamaService {
     }
 
     getUser(): Observable<Llama> {
-        let url = `https://llamaface-api.herokuapp.com/llamas/me`;
+        let url = `${this.llamasUrl}/me`;
         return this.http.get<Llama>(url, this.auth_header);
     }
 
@@ -40,5 +40,10 @@ export class LlamaService {
     removeUser(id : String): Observable<Llama> {
         const url = `${this.llamasUrl}/${id}`;
         return this.http.delete<Llama>(url, this.auth_header);
+    }
+
+    removeAuthToken() {
+        const url = `${this.llamasUrl}/me/token`;
+        return this.http.delete(url, this.auth_header);
     }
 }
