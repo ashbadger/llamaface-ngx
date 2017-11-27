@@ -8,4 +8,6 @@ llamaFace is f*cebook for llamas.
 
 view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/posts)
 
+(free heroku dyno, so plz give the server 15 seconds or so to boot up, then reload the page)
+
 *backend/api can be found (mongodb, express) here: [llamaface-api](https://github.com/ashbadger/llamaface-api)*
