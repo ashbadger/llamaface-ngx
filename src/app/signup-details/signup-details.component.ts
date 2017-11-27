@@ -41,6 +41,9 @@ export class SignupDetailsComponent implements OnInit {
   }
 
   deleteUser(id: string){
-    this.llamaService.removeUser(id).subscribe(() => this.router.navigate(['/login']))
+    this.llamaService.removeUser(id).subscribe(() => {
+      localStorage.removeItem('currentUser');
+      this.router.navigate(['/login']);
+    })
   }
 }
