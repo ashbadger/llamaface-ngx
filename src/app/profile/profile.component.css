@@ -140,6 +140,7 @@ p {
   #posts p {
     margin-left: unset;
     margin-right: unset;
+    padding-right: 8%;
   }
 }
 
