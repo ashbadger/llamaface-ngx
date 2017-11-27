@@ -8,6 +8,6 @@ this is a full stack project. backend/api can be found (mongodb, express) here: 
 
 **technologies**: angular 2, jwt, rxjs, heroku, typescript, bootstrap.
 
-view llamaFace on [heroku](https://safe-garden-73509.herokuapp.com/posts)
+view llamaFace on [heroku](https://llamaface-ng2.herokuapp.com/posts)
 
 (heroku dyno takes 10 seconds or so to boot up. reload the page then.)
