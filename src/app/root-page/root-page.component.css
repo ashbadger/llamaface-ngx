@@ -16,6 +16,10 @@
     align-content: center;
 }
 
+.row .col-md-6 {
+    padding-top: 50px;
+}
+
 h1, h3 {
     padding-left: 10%;
     padding-right: 10%;
@@ -40,6 +44,10 @@ img {
         width: 70%;
         margin-left: 15%;
         margin-right: 15%;
+    }
+
+    .row .col-md-6 {
+        padding-top: 10px;
     }
 }
 
