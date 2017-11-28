@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { RootPageComponent } from './root-page/root-page.component';
-import { SignupDetailsComponent } from './signup-details/signup-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 import { LlamasComponent } from './llamas/llamas.component';
 import { PostsComponent } from './posts/posts.component';
 
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'llamas', component: LlamasComponent },
   { path: 'login', component: RootPageComponent },
   { path: 'llamas/:id', component: ProfileComponent},
-  { path: 'account', component: SignupDetailsComponent},
+  { path: 'account', component: AccountDetailsComponent},
   { path: 'search', component: SearchResultsComponent},
   { path: 'posts', component: PostsComponent}
 ];

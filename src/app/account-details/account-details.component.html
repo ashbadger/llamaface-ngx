@@ -1,0 +1,72 @@
+<app-search-header></app-search-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <form class="form-horizontal" role="form">
+                <h2>Account Info</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+                    <div class="col-sm-9">
+                        <input [(ngModel)]="llama.name" input="llama.name" type="text" id="firstName" name= "firstName" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">Location</label>
+                    <div class="col-sm-9">
+                        <input [(ngModel)]="llama.location" type="text" id="location" name="location" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="picture_url" class="col-sm-3 control-label">Picture Url</label>
+                    <div class="col-sm-9">
+                        <input [(ngModel)]="llama.picture_url" type="text" id="picture_url" name="picture_url" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="col-sm-3 control-label">Age</label>
+                    <div class="col-sm-9">
+                        <input [(ngModel)]="llama.age" type="text" id="age" name="age" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-3 control-label">Description</label>
+                    <div class="col-sm-9">
+                        <textarea [(ngModel)]="llama.description" class="form-control" rows="5" id="description" name="description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button (click)="saveUser(llama)" type="submit" class="btn btn-primary btn-block">Save</button>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3" id="saved" *ngIf="saved">Your account details have been saved.</div>
+            </form> 
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <p style="text-align: center">If you want to delete your account:</p>
+                        <button data-toggle="modal" data-target="#basicModal" class="btn btn-danger btn-block">Delete My Account</button>
+                    </div>
+                </div>
+            </form>
+            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">Account Deletion</div>
+                    <div class="modal-body">
+                        <h3>Are you sure you want to delete your account?</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button (click)="deleteUser(llama._id)" type="button" class="btn btn-danger" data-dismiss="modal">Yes, Delete My Account</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="jumbotron">
+                <img src="{{ llama.picture_url }}" height="225" width="225">
+            </div>
+        </div>
+    </div>
+</div>

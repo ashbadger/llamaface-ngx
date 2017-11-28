@@ -1,0 +1,50 @@
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+.jumbotron {
+    margin-top: 100px;
+    max-width: 350px;
+}
+
+*[role="form"] h2 {
+    margin-left: 35%;
+    margin-bottom: 1em;
+}
+
+h2 {
+    padding-left: 60px;
+}
+
+#saved {
+    color: green;
+    text-align: center;
+}
+
+.modal-dialog {
+    margin-top: 10% !important;
+}
+
+@media (max-width: 767px) {
+    h2 {
+        padding-left: 0px;
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 535px) {
+    h2 {
+        padding-left: 0px;
+        margin-left: 25% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .jumbotron {
+        display: none;
+    }
+}

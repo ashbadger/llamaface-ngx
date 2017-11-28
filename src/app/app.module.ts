@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LlamasComponent } from './llamas/llamas.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SignupDetailsComponent } from './signup-details/signup-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 import { RootPageComponent } from './root-page/root-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchHeaderComponent } from './search-header/search-header.component';
@@ -25,7 +25,7 @@ import { PostsComponent } from './posts/posts.component';
     LlamasComponent,
     SearchResultsComponent,
     ProfileComponent,
-    SignupDetailsComponent,
+    AccountDetailsComponent,
     RootPageComponent,
     SearchHeaderComponent,
     PostsComponent
