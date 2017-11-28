@@ -10,12 +10,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-search-header',
-  templateUrl: './search-header.component.html',
-  styleUrls: ['./search-header.component.css'],
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css'],
   providers: [ SearchService, LlamaService ]
 })
-export class SearchHeaderComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   llamas: Llama[] = [];
   user: Llama;

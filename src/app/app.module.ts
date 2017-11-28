@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { RootPageComponent } from './root-page/root-page.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchHeaderComponent } from './search-header/search-header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { PostsComponent } from './posts/posts.component';
     ProfileComponent,
     AccountDetailsComponent,
     RootPageComponent,
-    SearchHeaderComponent,
+    NavbarComponent,
     PostsComponent
   ],
   imports: [
