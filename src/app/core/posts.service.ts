@@ -26,16 +26,16 @@ export class PostService {
 
     deleteUserPosts(id: string): Observable<Post[]> {
         const url = `${this.postsUrl}/user/${id}`;
-        return this.http.delete<Post[]>(url);
+        return this.http.delete<Post[]>(url, this.auth_header);
     }
 
     createPost(post : Post) {
         let url = this.postsUrl;
-        return this.http.post<Post>(url, post);
+        return this.http.post<Post>(url, post, this.auth_header);
     }
 
     deletePost(id: string): Observable<Post> {
         let url = `${this.postsUrl}/${id}`;
-        return this.http.delete<Post>(url);
+        return this.http.delete<Post>(url, this.auth_header);
     }
 }
