@@ -6,8 +6,8 @@ this is a full stack project. backend/api can be found (mongodb, express) here: 
 
 **functionality**: create an account, edit/delete user account, search for users, view user profiles, make/delete posts.
 
-**technologies**: angular 2, jwt, rxjs, heroku, typescript, bootstrap.
+**technologies**: angular 2, jwt, rxjs, typescript, bootstrap, s3, travis ci.
 
-view llamaFace on [heroku](https://llamaface-ng2.herokuapp.com/posts)
+llamaFace front end is hosted via S3. view it [here](http://llamaface-ng2.s3-website-us-east-1.amazonaws.com/posts).
 
-(heroku dyno takes 10 seconds or so to boot up. reload the page then.)
+(backend is hosted on a heroku dyno that takes 10 seconds or so to boot up. reload the page and then voila llamas.)
