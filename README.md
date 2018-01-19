@@ -1,5 +1,7 @@
 ![logo](https://github.com/ashbadger/llamaface-ng2/blob/master/src/assets/images/logo.png?raw=true)
 
+[![Build Status](https://travis-ci.org/ashbadger/llamaface-ng2.svg?branch=master)](https://travis-ci.org/ashbadger/llamaface-ng2)
+
 llamaFace is f*cebook for llamas.
 
 this is a full stack project. backend/api can be found (mongodb, express) here: [llamaface-api](https://github.com/ashbadger/llamaface-api)
