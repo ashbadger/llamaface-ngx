@@ -16,14 +16,14 @@ export class AccountDetailsComponent implements OnInit {
   saved = false;
 
   constructor(
-    private llamaService : LlamaService,
-    private postService : PostService,
-    private router : Router
+    private llamaService: LlamaService,
+    private postService: PostService,
+    private router: Router
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
-    if(!localStorage.getItem('currentUser')) {
+    if (!localStorage.getItem('currentUser')) {
       this.router.navigate(['/login'])
     }
 
@@ -42,7 +42,7 @@ export class AccountDetailsComponent implements OnInit {
     });
   }
 
-  deleteUser(id: string){
+  deleteUser(id: string) {
     this.postService.deleteUserPosts(id).subscribe()
 
     this.llamaService.removeUser(id).subscribe(() => {

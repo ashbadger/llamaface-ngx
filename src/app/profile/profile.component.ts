@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      const llamaId = ''+params.get('id');
+      const llamaId = '' + params.get('id');
       this.fetchLlama(llamaId);
       this.fetchLlamaPosts(llamaId);
       this.fetchCurrentUser();
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  fetchLlamaPosts(id: string) {
+  fetchLlamaPosts(id: string): void {
     this.postService.getUserPosts(id).subscribe(posts => this.posts = posts)
   }
 
@@ -41,11 +41,11 @@ export class ProfileComponent implements OnInit {
     this.llamaService.getLlama(id).subscribe(llama => this.llama = llama);
   }
 
-  removePost(id: string){
+  removePost(id: string): void {
     this.postService.deletePost(id).subscribe(() => this.fetchLlamaPosts(this.llama._id))
   }
 
-  fetchCurrentUser(){
+  fetchCurrentUser(): void {
     this.llamaService.getUser().subscribe(user => this.user = user)
   }
 }

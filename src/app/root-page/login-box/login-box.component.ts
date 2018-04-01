@@ -24,8 +24,8 @@ export class LoginBoxComponent implements OnInit {
   ngOnInit() {}
 
   onLogin() {
-    let llama = this.llama
-    
+    const llama = this.llama
+
     return this.loginService.login(llama)
       .subscribe((res) => {
         localStorage.setItem('currentUser', res['token'])

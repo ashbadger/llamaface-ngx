@@ -19,7 +19,7 @@ export class SearchService {
     constructor(
         private http: HttpClient,
         private router: Router
-    ) {}  
+    ) {}
 
     getSearch(query) {
         return this.http.get<Llama[]>(`${this.searchUrl}?q=${query}`)

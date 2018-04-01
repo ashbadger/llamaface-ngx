@@ -9,7 +9,7 @@ export class PostService {
     private postsUrl = 'https://llamaface-api.herokuapp.com/posts'
     private auth_header = {headers: new HttpHeaders().set('x-auth', localStorage.getItem('currentUser'))}
 
-    constructor(private http: HttpClient) {}    
+    constructor(private http: HttpClient) {}
     getPosts(): Observable<Post[]> {
         return this.http.get<Post[]>(this.postsUrl);
     }
@@ -29,13 +29,13 @@ export class PostService {
         return this.http.delete<Post[]>(url, this.auth_header);
     }
 
-    createPost(post : Post) {
-        let url = this.postsUrl;
+    createPost(post: Post) {
+        const url = this.postsUrl;
         return this.http.post<Post>(url, post, this.auth_header);
     }
 
     deletePost(id: string): Observable<Post> {
-        let url = `${this.postsUrl}/${id}`;
+        const url = `${this.postsUrl}/${id}`;
         return this.http.delete<Post>(url, this.auth_header);
     }
 }

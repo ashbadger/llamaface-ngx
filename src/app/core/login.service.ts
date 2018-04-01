@@ -10,14 +10,14 @@ import { Llama } from './llama.model';
 export class LoginService {
     private loginUrl = 'https://llamaface-api.herokuapp.com/llamas/login'
 
-    llama : Llama = new Llama();
+    llama: Llama = new Llama();
 
-    constructor(private http: HttpClient) {}  
+    constructor(private http: HttpClient) {}
     login(llama: Llama) {
         return this.http.post(this.loginUrl, llama)
     }
 
     userLoggedIn() {
         return localStorage.getItem('currentUser') ? true : false
-    }    
+    }
 }

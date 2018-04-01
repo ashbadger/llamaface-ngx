@@ -10,10 +10,10 @@ export class LlamaService {
     private llamasUrl = 'https://llamaface-api.herokuapp.com/llamas'
     private auth_header = {headers: new HttpHeaders().set('x-auth', localStorage.getItem('currentUser'))}
 
-    constructor(private http: HttpClient) {}    
+    constructor(private http: HttpClient) {}
     getLlamas(params = {}): Observable<Llama[]> {
-        let paramsString = queryString.stringify(params);
-        let httpParams = new HttpParams({ fromString: paramsString });
+        const paramsString = queryString.stringify(params);
+        const httpParams = new HttpParams({ fromString: paramsString });
         return this.http.get<Llama[]>(this.llamasUrl, {params: httpParams });
     }
 
@@ -22,22 +22,22 @@ export class LlamaService {
         return this.http.get<Llama>(url);
     }
 
-    createLlama(llama : Llama) {
-        let url = this.llamasUrl;
+    createLlama(llama: Llama) {
+        const url = this.llamasUrl;
         return this.http.post<Llama>(url, llama);
     }
 
     getUser(): Observable<Llama> {
-        let url = `${this.llamasUrl}/me`;
+        const url = `${this.llamasUrl}/me`;
         return this.http.get<Llama>(url, this.auth_header);
     }
 
-    updateUser(llama : Llama) {
-        let url = `${this.llamasUrl}/${llama._id}`;
+    updateUser(llama: Llama) {
+        const url = `${this.llamasUrl}/${llama._id}`;
         return this.http.patch<Llama>(url, llama, this.auth_header);
     }
 
-    removeUser(id : String): Observable<Llama> {
+    removeUser(id: String): Observable<Llama> {
         const url = `${this.llamasUrl}/${id}`;
         return this.http.delete<Llama>(url, this.auth_header);
     }

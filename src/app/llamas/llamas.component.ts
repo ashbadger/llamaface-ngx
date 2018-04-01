@@ -19,8 +19,8 @@ export class LlamasComponent implements OnInit {
     private llamaService: LlamaService,
     private searchService: SearchService
   ) {}
-   
-  ngOnInit():void {
+
+  ngOnInit() {
     this.fetchLlamas()
   }
 

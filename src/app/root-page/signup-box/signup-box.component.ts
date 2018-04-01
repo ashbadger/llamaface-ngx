@@ -5,7 +5,7 @@ import { Llama } from '../../core/llama.model'
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
-import * as _ from "lodash";
+import { update } from 'lodash';
 
 @Component({
   selector: 'app-signup-box',
@@ -31,7 +31,7 @@ export class SignupBoxComponent implements OnInit {
     this.requiredFields = true;
 
     this.llamaForm = this.fb.group({
-      'name': ['', [Validators.required,Validators.minLength(4)]],
+      'name': ['', [Validators.required, Validators.minLength(4)]],
       'email': ['', [Validators.required, Validators.email]],
       'password': this.fb.group({
         password: ['', [Validators.required]],
@@ -47,12 +47,12 @@ export class SignupBoxComponent implements OnInit {
 
   addLlama(): void {
 
-    this.llama = _.update(this.llamaForm.value, 'password', (form) => form.password)
+    this.llama = update(this.llamaForm.value, 'password', (form) => form.password)
 
     this.llamaService.createLlama(this.llama).subscribe(() => {
       this.loginOnRegister();
     }, (error) => {
-      if(error.error.code == 11000) {
+      if (error.error.code === 11000) {
         this.alreadyExists = true;
         this.requiredFields = true;
       } else {
@@ -62,8 +62,8 @@ export class SignupBoxComponent implements OnInit {
   }
 
   loginOnRegister() {
-    let llama = this.llama
-    
+    const llama = this.llama
+
     return this.loginService.login(llama)
       .subscribe((res) => {
         localStorage.setItem('currentUser', res['token'])

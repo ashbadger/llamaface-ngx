@@ -15,7 +15,7 @@ import { Observable } from 'rxjs/Observable';
 export class SearchResultsComponent implements OnInit {
 
   llamas: Llama[];
-  query: string = '';
+  query = '';
 
   constructor(
     private searchService: SearchService,
@@ -31,10 +31,10 @@ export class SearchResultsComponent implements OnInit {
       httpParams.set('q', this.query);
 
       this.getSearch();
-    }) 
+    })
   }
 
-  getSearch() { 
+  getSearch() {
     this.searchService.getSearch(this.query)
     .subscribe(llamas => this.llamas = llamas)
   }

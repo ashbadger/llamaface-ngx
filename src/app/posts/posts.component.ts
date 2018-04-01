@@ -18,6 +18,7 @@ export class PostsComponent implements OnInit {
   post: Post = new Post();
   user = undefined;
   failedLogin = false;
+  loaded = false;
 
   constructor(
     private postService: PostService,
@@ -29,36 +30,32 @@ export class PostsComponent implements OnInit {
     this.fetchCurrentUser();
   }
 
-  ngOnChanges(){
-    this.fetchPosts();
-  } 
-
-  fetchPosts(){
-    this.postService.getPosts().subscribe(posts => { 
+  fetchPosts() {
+    this.postService.getPosts().subscribe(posts => {
       _.forEach(posts, (post) => {
         this.fetchLlama(post.user_id).subscribe(llama => post['user'] = llama)
       })
-
-      this.posts = posts
+      this.posts = posts;
+      this.loaded = true;
     })
   }
 
-  fetchCurrentUser(){
+  fetchCurrentUser() {
     this.llamaService.getUser().subscribe(user => {
       this.user = user
     }, () => this.failedLogin = true)
   }
 
-  fetchLlama(id: string){
+  fetchLlama(id: string) {
     return this.llamaService.getLlama(id)
   }
 
-  savePost(post: Post){
+  savePost(post: Post) {
     post['user_id'] = this.user._id
     this.postService.createPost(post).subscribe(() => this.fetchPosts())
   }
 
-  removePost(id: string){
+  removePost(id: string) {
     this.postService.deletePost(id).subscribe(() => this.fetchPosts())
   }
 }
