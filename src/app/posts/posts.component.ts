@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
   post: Post = new Post();
   user = undefined;
   failedLogin = false;
-  loaded = false;
+  loaded: Boolean;
 
   constructor(
     private postService: PostService,
@@ -26,6 +26,7 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loaded = false;
     this.fetchPosts();
     this.fetchCurrentUser();
   }
