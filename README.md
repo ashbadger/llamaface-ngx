@@ -12,4 +12,4 @@ this is a full stack project. backend/api can be found (mongodb, express) here: 
 
 llamaFace front end is hosted via S3. view it [here](http://llamaface-ng2.s3-website-us-east-1.amazonaws.com/posts).
 
-(backend is hosted on a heroku dyno that takes 10 seconds or so to boot up. reload the page and then voila llamas.)
+(backend is hosted on a heroku dyno that takes 10 seconds or so to boot up.)
