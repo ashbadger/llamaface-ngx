@@ -7,7 +7,7 @@ import { PostService } from '../core/posts.service'
 @Component({
   selector: 'app-account-details',
   templateUrl: './account-details.component.html',
-  styleUrls: ['./account-details.component.css'],
+  styleUrls: ['./account-details.component.scss'],
   providers: [ LlamaService, PostService ]
 })
 export class AccountDetailsComponent implements OnInit {

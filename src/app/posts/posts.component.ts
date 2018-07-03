@@ -9,7 +9,7 @@ import { forEach } from 'lodash';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css'],
+  styleUrls: ['./posts.component.scss'],
   providers: [ PostService, LlamaService ]
 })
 export class PostsComponent implements OnInit {

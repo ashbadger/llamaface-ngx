@@ -5,7 +5,7 @@ import { Llama } from '../../core/llama.model';
 @Component({
   selector: 'app-llama-result',
   templateUrl: './llama-result.component.html',
-  styleUrls: ['./llama-result.component.css']
+  styleUrls: ['./llama-result.component.scss']
 })
 export class LlamaResultComponent implements OnInit {
   @Input() llama: Llama;

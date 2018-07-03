@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css'],
+  styleUrls: ['./search-results.component.scss'],
   providers: [ SearchService]
 })
 export class SearchResultsComponent implements OnInit {

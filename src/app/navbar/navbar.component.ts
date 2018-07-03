@@ -12,7 +12,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  styleUrls: ['./navbar.component.scss'],
   providers: [ SearchService, LlamaService ]
 })
 export class NavbarComponent implements OnInit {
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
   searchCtrl: FormControl;
 
-  constructor( 
+  constructor(
     private searchService: SearchService,
     private llamaService: LlamaService,
     private route: ActivatedRoute,
@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/search'], { queryParams: { q: this.query } });
   }
 
-  fetchUser(){
+  fetchUser() {
     this.llamaService.getUser().subscribe(user => this.user = user)
   }
 }

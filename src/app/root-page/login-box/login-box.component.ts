@@ -8,7 +8,7 @@ import { Llama } from '../../core/llama.model'
 @Component({
   selector: 'app-login-box',
   templateUrl: './login-box.component.html',
-  styleUrls: ['./login-box.component.css'],
+  styleUrls: ['./login-box.component.scss'],
   providers: [ LoginService ]
 })
 export class LoginBoxComponent implements OnInit {

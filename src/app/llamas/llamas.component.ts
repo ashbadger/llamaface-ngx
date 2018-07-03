@@ -8,7 +8,7 @@ import { Llama } from '../core/llama.model'
 @Component({
   selector: 'app-search',
   templateUrl: './llamas.component.html',
-  styleUrls: ['./llamas.component.css'],
+  styleUrls: ['./llamas.component.scss'],
   providers: [ LlamaService, SearchService ]
 })
 export class LlamasComponent implements OnInit {

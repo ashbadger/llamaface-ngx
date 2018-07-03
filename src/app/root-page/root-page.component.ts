@@ -5,7 +5,7 @@ import { LoginService } from '../core/login.service'
 @Component({
   selector: 'app-root-page',
   templateUrl: './root-page.component.html',
-  styleUrls: ['./root-page.component.css'],
+  styleUrls: ['./root-page.component.scss'],
   providers: [ LoginService ]
 })
 export class RootPageComponent implements OnInit {

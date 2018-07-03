@@ -8,7 +8,7 @@ import { PostService } from '../core/posts.service'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['./profile.component.scss'],
   providers: [ LlamaService, PostService ]
 })
 export class ProfileComponent implements OnInit {

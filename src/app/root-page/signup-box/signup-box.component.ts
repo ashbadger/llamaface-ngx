@@ -10,7 +10,7 @@ import { update } from 'lodash';
 @Component({
   selector: 'app-signup-box',
   templateUrl: './signup-box.component.html',
-  styleUrls: ['./signup-box.component.css'],
+  styleUrls: ['./signup-box.component.scss'],
   providers: [ LlamaService ]
 })
 export class SignupBoxComponent implements OnInit {
