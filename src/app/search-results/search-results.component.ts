@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Llama } from '../core/llama.model';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-results',
@@ -27,7 +27,7 @@ export class SearchResultsComponent implements OnInit {
     this.route.queryParams.subscribe((query) => {
       this.query = query.q;
 
-      let httpParams = new HttpParams();
+      const httpParams = new HttpParams();
       httpParams.set('q', this.query);
 
       this.getSearch();

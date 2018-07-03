@@ -18,17 +18,17 @@ export class LoginBoxComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {}
 
   onLogin() {
-    const llama = this.llama
+    const llama = this.llama;
 
     return this.loginService.login(llama)
       .subscribe((res) => {
-        localStorage.setItem('currentUser', res['token'])
+        localStorage.setItem('currentUser', res['token']);
         this.router.navigate(['/posts']);
       }, (error) => {
         this.failedAttempt = true;

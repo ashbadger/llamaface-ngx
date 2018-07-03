@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as queryString from 'query-string';
-import 'rxjs/add/operator/map'
 
 import { Llama } from './llama.model';
 

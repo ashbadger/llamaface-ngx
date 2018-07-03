@@ -24,15 +24,15 @@ export class AccountDetailsComponent implements OnInit {
   ngOnInit() {
 
     if (!localStorage.getItem('currentUser')) {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
     }
 
     this.fetchUser();
   }
 
   fetchUser() {
-    this.llamaService.getUser().subscribe(user => {
-      this.llama = user
+    this.llamaService.getUser().subscribe((user) => {
+      this.llama = user;
     })
   }
 

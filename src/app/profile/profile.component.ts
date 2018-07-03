@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
   }
 
   fetchLlamaPosts(id: string): void {
-    this.postService.getUserPosts(id).subscribe(posts => this.posts = posts)
+    this.postService.getUserPosts(id).subscribe(posts => this.posts = posts);
   }
 
   fetchLlama(id: string): void {
@@ -42,10 +42,10 @@ export class ProfileComponent implements OnInit {
   }
 
   removePost(id: string): void {
-    this.postService.deletePost(id).subscribe(() => this.fetchLlamaPosts(this.llama._id))
+    this.postService.deletePost(id).subscribe(() => this.fetchLlamaPosts(this.llama._id));
   }
 
   fetchCurrentUser(): void {
-    this.llamaService.getUser().subscribe(user => this.user = user)
+    this.llamaService.getUser().subscribe(user => this.user = user);
   }
 }

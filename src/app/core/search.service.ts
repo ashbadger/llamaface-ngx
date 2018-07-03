@@ -1,11 +1,8 @@
-import { query } from '@angular/core/src/animation/dsl';
 import { Injectable, Query, EventEmitter } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable, BehaviorSubject } from 'rxjs';
 import * as queryString from 'query-string';
-import 'rxjs/add/operator/map';
 
 import { Llama } from './llama.model';
 

@@ -4,7 +4,7 @@ import { LlamaService } from '../core/llama.service';
 import { Post } from '../core/posts.model';
 import { Llama } from '../core/llama.model';
 
-import * as _ from 'lodash';
+import { forEach } from 'lodash';
 
 @Component({
   selector: 'app-posts',
@@ -33,7 +33,7 @@ export class PostsComponent implements OnInit {
 
   fetchPosts() {
     this.postService.getPosts().subscribe(posts => {
-      _.forEach(posts, (post) => {
+      forEach(posts, (post) => {
         this.fetchLlama(post.user_id).subscribe(llama => post['user'] = llama)
       })
       this.posts = posts;
