@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { LoginBoxComponent } from './root-page/login-box/login-box.component';
@@ -15,6 +18,7 @@ import { RootPageComponent } from './root-page/root-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
+import { LlamaResultComponent } from './shared/llama-result/llama-result.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +32,18 @@ import { PostsComponent } from './posts/posts.component';
     AccountDetailsComponent,
     RootPageComponent,
     NavbarComponent,
-    PostsComponent
+    PostsComponent,
+    LlamaResultComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

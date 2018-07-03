@@ -1,23 +1,6 @@
 <app-navbar></app-navbar>
-<div>
-  <div class="row">
-    <div class="col-md-12" *ngFor="let llama of llamas">
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-md-2 col-sm-2">
-            <a href="llamas/{{ llama._id }}">
-              <img src="{{ llama.picture_url}}">
-            </a>
-          </div>
-          <div class="col-md-10 col-sm-10">
-            <a href="llamas/{{ llama._id }}">
-              <h3>{{ llama.name }}</h3>
-            </a>
-            <h3>Age: {{ llama.age }}</h3>
-            <h3>Location: {{ llama.location }}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
+<div fxLayout="column" fxLayoutGap="20px">
+  <div *ngFor="let llama of llamas">
+    <app-llama-result [llama]="llama"></app-llama-result>
   </div>
 </div>

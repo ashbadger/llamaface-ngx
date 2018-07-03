@@ -1,0 +1,14 @@
+<mat-card fxLayout="row" fxLayoutGap="40px">
+  <div>
+    <a href="llamas/{{ llama._id }}">
+      <img src="{{ llama.picture_url}}">
+    </a>
+  </div>
+  <div>
+    <a href="llamas/{{ llama._id }}">
+      <h3>{{ llama.name }}</h3>
+    </a>
+    <h4>Age: {{ llama.age }}</h4>
+    <h4>Location: {{ llama.location }}</h4>
+  </div>
+</mat-card>
