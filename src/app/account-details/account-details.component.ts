@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LlamaService } from '../core/llama.service';
 import { Llama } from '../core/llama.model';
 import { Router } from '@angular/router'
-import { PostService } from '../core/posts.service'
+import { PostService } from '../core/post.service'
 
 @Component({
   selector: 'app-account-details',

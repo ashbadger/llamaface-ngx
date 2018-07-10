@@ -1,10 +1,9 @@
-
 #no-results {
   text-align: center;
 }
 
-.posts {
-  padding: 0 10% 0 10%;
+div.llamas {
+  padding: 0 20% 0 20%;
 }
 
 a {
@@ -15,37 +14,14 @@ a {
   margin: 0 25% 0 25%;
 }
 
-a:hover {
-  background-color: transparent !important; 
-  text-decoration: none !important; 
-}
-
-@media (max-width: 829px) {
-	img {
-		width: 75%;
-	}
+@media (max-width: 900px) {
+  #no-results mat-card {
+    margin: 0 15% 0 15%;
+  }  
 }
 
 @media (max-width: 636px) {
-  #no-results h2 {
-    font-size: 25px;
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-@media (max-width: 466px) {
-  #no-results h2 {
-    font-size: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-@media (max-width: 767px) {
-  img {
-    display: block;
-    margin: auto;
-    margin-left: auto !important;
-  }
+  #no-results mat-card {
+    margin: 0 2% 0 2%;
+  }  
 }

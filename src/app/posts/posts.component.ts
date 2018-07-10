@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../core/posts.service';
+import { PostService } from '../core/post.service';
 import { LlamaService } from '../core/llama.service';
-import { Post } from '../core/posts.model';
+import { Post } from '../core/post.model';
 import { Llama } from '../core/llama.model';
 
 import { forEach } from 'lodash';
@@ -27,14 +27,19 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.loaded = false;
-    this.fetchPosts();
-    this.fetchCurrentUser();
+    this.fetchCurrentUser().subscribe((user) => {
+      this.user = user
+      this.fetchPosts();
+    }, () => this.failedLogin = true);
   }
 
   fetchPosts() {
     this.postService.getPosts().subscribe(posts => {
       forEach(posts, (post) => {
-        this.fetchLlama(post.user_id).subscribe(llama => post['user'] = llama)
+        this.fetchLlama(post.user_id).subscribe((llama) => {
+          post['user'] = llama;
+          post['canDelete'] = post.user_id === this.user._id ? true : false;
+        });
       })
       this.posts = posts;
       this.loaded = true;
@@ -42,9 +47,7 @@ export class PostsComponent implements OnInit {
   }
 
   fetchCurrentUser() {
-    this.llamaService.getUser().subscribe(user => {
-      this.user = user
-    }, () => this.failedLogin = true)
+    return this.llamaService.getUser();
   }
 
   fetchLlama(id: string) {

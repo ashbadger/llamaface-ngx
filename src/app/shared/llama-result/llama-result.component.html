@@ -1,14 +1,16 @@
-<mat-card fxLayout="row" fxLayoutGap="40px">
-  <div>
+<mat-card fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0">
+  <div class="picture-card" fxLayout="column" fxFlex="30%">
     <a href="llamas/{{ llama._id }}">
       <img src="{{ llama.picture_url}}">
     </a>
   </div>
-  <div>
-    <a href="llamas/{{ llama._id }}">
-      <h3>{{ llama.name }}</h3>
-    </a>
-    <h4>Age: {{ llama.age }}</h4>
-    <h4>Location: {{ llama.location }}</h4>
+  <div class="description" fxLayout="column" fxFlex="66%">
+    <div>
+      <a href="llamas/{{ llama._id }}">
+        <h3>{{ llama.name }}</h3>
+      </a>
+      <h4>Age: {{ llama.age }}</h4>
+      <h4>Location: {{ llama.location }}</h4>
+    </div>
   </div>
 </mat-card>

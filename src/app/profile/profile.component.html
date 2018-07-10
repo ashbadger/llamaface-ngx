@@ -1,53 +1,30 @@
 <app-navbar></app-navbar>
-<div class="col-md-4">
-  <div class="jumbotron">
-      <h1>{{ llama.name }}</h1>
-      <img id="profile" src="{{llama.picture_url}}">
-      <h3> Age: {{ llama.age }} </h3>
-      <h3> Location: {{ llama.location }}</h3>
-  </div>
-</div>
-<div class="col-md-8">
-  <div class="jumbotron">
-    <h2>Bio</h2>
-    <p>{{ llama.description }}</p>
-  </div>
-</div>
-<div class="col-md-8" id="posts">
-    <div class="jumbotron">
-      <h2>Posts</h2>
-      <div id="no-results" *ngIf="posts?.length == 0">
-        <div class="jumbotron">
-          <p id="no-posts">This llama hasn't posted anything yet!</p>
-        </div>
+<div fxLayout="row wrap" fxLayoutGap="20px" fxLayout.xs="column" fxLayout.sm="column">
+  <mat-card fxLayout="column" fxFlex="25" fxLayoutAlign="center center" class="profile">
+    <h3>{{ llama.name }}</h3>
+    <img mat-card-image src="{{llama.picture_url}}">
+    <h4> Age: {{ llama.age }}</h4>
+    <h4> Location: {{ llama.location }}</h4>
+  </mat-card>
+  <div fxLayout="column" fxFlex="70">
+    <mat-card class="header">
+      <h3>Bio</h3>
+    </mat-card>
+    <mat-card class="body">
+      <p>{{ llama.description }}</p>
+    </mat-card>
+    <mat-card class="header">
+      <h3>Posts</h3>
+    </mat-card>
+    <mat-card *ngIf="posts?.length == 0">
+      <div id="no-results" class="body">
+        <p id="no-posts">This llama hasn't posted anything yet!</p>
       </div>
-      <div class="row">
-          <div class="col-md-12" *ngFor="let post of posts">
-            <div class="jumbotron">
-                <div *ngIf="llama._id == user?._id" class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a (click)="removePost(post._id)">Delete Post</a></li>
-                  </ul>
-                </div>
-              <div class="row">
-                <div class="col-md-3 col-sm-3">
-                  <h3>
-                    <a href="llamas/{{ llama._id}}">{{ llama.name }}</a>
-                  </h3>
-                  <a href="llamas/{{ llama._id }}">
-                    <img src="{{ llama.picture_url}}">
-                  </a>
-                </div>
-                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                  <p id="description">{{ post.text }}</p>
-                  <p id="posted">posted at {{ post.createdAt | date:'medium' }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </mat-card>
+    <div fxLayout="column" fxLayoutGap="20px" class="posts">
+      <div *ngFor="let post of posts">
+        <app-post [post]="post" [canDelete]="post?.canDelete" (deletedPost)="removePost($event)"></app-post>
+      </div>
     </div>
   </div>
+</div> 

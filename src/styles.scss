@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+$red: #ff3e3e;
+$light-grey: #eee;
 
 body {
     overflow-x: hidden;
+}
+
+.warn {
+    color: $red;
+}
+
+mat-card {
+    background: $light-grey;
+}
+
+a {
+    &:hover {
+        text-decoration: none !important; 
+        background-color: transparent;
+    }
+
+    color: #267AB6;
 }

@@ -1,38 +1,27 @@
-img#profile {
-    width: 250px;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    margin-left:auto; 
-    margin-right:auto;
-    display: block;
+.profile {
+  text-align: center;
+  margin-left: 20px;
+  max-height: 450px;
+  img {
+    max-width: 300px;
+  }
 }
 
-h1 {
-  font-size: 45px;
+.header {
+  margin-bottom: 5px;
+}
+
+.body {
+  margin-bottom: 20px;
 }
 
 a {
     color: grey;
-}
 
-#no-posts {
-    text-align: center !important;
-    width: 100%;
-    position: absolute;
-    margin-left: unset;
-    margin-right: unset;
-}
-
-a:hover { 
-    background-color: transparent !important; 
-    text-decoration: none !important; 
-}
-
-.jumbotron {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 5px;
-    text-align: center;
+    &:hover { 
+      background-color: transparent !important; 
+      text-decoration: none !important; 
+  }
 }
 
 p {
@@ -40,120 +29,8 @@ p {
     margin-right: 10%;
 }
 
-#posts .jumbotron {
-    border-top: 4px;
-    border-color: white;
-    border-top-style: outset;
-}
-
-#posts .dropdown-menu {
-    min-width: 110px;
-}
-
-#posts img {
-    width: 120px;
-    margin-left: 25%;
-}
-
-#posts .col-md-9, .col-sm-9 {
-  margin-top: 8%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-#posts .col-lg-9, .col-xl-9 {
-  margin-top: 5%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-#posts .jumbotron .row .col-sm-9, .col-md-9 {
-  padding-top: -10%;
-}
-
-#posts .dropdown {
-  position: absolute;
-  padding-left: 90%;
-  font-size: 15px;
-} 
-
-#posts .dropdown-menu {
-  position: absolute;
-  left: 88%;
-} 
-
-#posts p {
-  vertical-align: center;
-  text-align: left;
-}
-
-#posts #posted {
-  font-size: 17px;
-}
-
-#posts h3 {
-  margin-left: 25%;
-}
-
-@media (max-width: 767px) {
-  #posts p, h3 {
-    text-align: center;
-    margin-left: 0px;
-  }
-
-  #posts img {
-    display: block;
-    margin: auto;
-  }
-}
-
-#posts button {
-    margin-top: 15px;
-  }
-
-@media (max-width: 1150px) {
-  #posts .dropdown {
-    position: absolute;
-    padding-left: 88%;
-    font-size: 15px;
-  } 
-
-  #posts .dropdown-menu {
-    position: absolute;
-    left: 86.5%;
-  } 
-}
-
-@media (max-width: 767px) {
-  #posts .dropdown {
-    position: absolute;
-    padding-left: 75%;
-    font-size: 15px;
-  } 
-
-  #posts .dropdown-menu {
-    position: absolute;
-    left: 80.5%;
-  } 
-
-
-  #posts h3 {
+@media (max-width: 959px) {
+  .profile {
     margin-left: unset;
   }
-
-  #posts p {
-    margin-left: unset;
-    margin-right: unset;
-    padding-right: 8%;
-  }
-}
-
-@media (max-width: 500px) {
-  #posts .dropdown {
-    padding-left: 75%;
-  } 
-
-  #posts .dropdown-menu {
-    left: 70.5%;
-  } 
 }

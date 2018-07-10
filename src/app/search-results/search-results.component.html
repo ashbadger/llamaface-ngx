@@ -1,23 +1,18 @@
 <app-navbar></app-navbar>
-<div class="posts">
-  <div id="no-results" *ngIf="llamas?.length == 0">
-    <mat-card>
-      <mat-card-header fxLayoutAlign="center center">
-        <div mat-card-avatar>
-          <mat-icon>error_outline</mat-icon>
-        </div>
-        <mat-card-title>
-          <b>We couldn't find any llamas from that search! </b>
-          <br>
-          <b>Search for someone else or click <a id="all" href="/llamas">here</a> to view all llamas!</b>
-        </mat-card-title>
-      </mat-card-header>
-      <img src="../../assets/images/alpacaderp.jpg">
-    </mat-card>
-  </div>
-  <div fxLayout="column" fxLayoutGap="20px">
-    <div *ngFor="let llama of llamas">
-      <app-llama-result [llama]="llama"></app-llama-result>
-    </div>
+<div id="no-results" *ngIf="llamas?.length == 0">
+  <mat-card>
+    <mat-card-header fxLayoutAlign="center center">
+      <mat-card-title>
+        <b class="warn">We couldn't find any llamas from that search! </b>
+        <br>
+        <b>Search for someone else or <a id="all" href="/llamas">click to view all llamas!</a></b>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../assets/images/alpacaderp.jpg">
+  </mat-card>
+</div>
+<div class="llamas" fxLayout="column" fxLayoutGap="20px">
+  <div *ngFor="let llama of llamas">
+    <app-llama-result [llama]="llama"></app-llama-result>
   </div>
 </div>

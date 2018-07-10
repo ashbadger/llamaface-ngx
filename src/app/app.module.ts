@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { LoginBoxComponent } from './root-page/login-box/login-box.component';
@@ -19,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
 import { LlamaResultComponent } from './shared/llama-result/llama-result.component';
+import { PostComponent } from './shared/post/post.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { LlamaResultComponent } from './shared/llama-result/llama-result.compone
     RootPageComponent,
     NavbarComponent,
     PostsComponent,
-    LlamaResultComponent
+    LlamaResultComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import { LlamaResultComponent } from './shared/llama-result/llama-result.compone
     ReactiveFormsModule,
     MatCardModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

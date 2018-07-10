@@ -1,0 +1,22 @@
+<mat-card *ngIf="post?.user" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0">
+  <mat-toolbar>
+    <span fxFlex="100"></span>
+    <button mat-icon-button (click)="deletePost(post._id)" *ngIf="canDelete">
+      <mat-icon fxFlex>delete</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="picture-card" fxLayout="column" fxFlex="30%">
+    <a href="llamas/{{ post.user._id }}">
+      <h4>{{ post.user.name }}</h4>
+    </a>
+    <a href="llamas/{{ post.user._id }}">
+      <img src="{{ post.user.picture_url}}">
+    </a>
+  </div>
+  <div class="description" fxLayout="column" fxFlex="66%">
+    <div>
+      <p>{{ post.text }}</p>
+      <i>posted at {{ post.createdAt | date:'medium' }}</i>
+    </div>
+  </div>
+</mat-card>

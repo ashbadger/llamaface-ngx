@@ -6,7 +6,7 @@ img {
     background: white;
     border-radius: 10px;
     div {
-        padding-left: 5%;
+        padding: 10%;
     }
 }
 
@@ -20,25 +20,13 @@ img {
     }
 }
 
-button {
-    background: #ee4141de;
-    color: white;
+mat-toolbar {
+    height: 0px;
 }
 
-@media (max-width: 787px) {
-    * {
-        text-align: center;
-        width: 100%;   
-        margin-right: 0px !important; 
-    }
-
-    h4 {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 23px;
-    }
+button {
+    background-color: #ee4141de;
+    color: white;
 }
 
 @media (max-width: 850px) {

@@ -1,105 +1,17 @@
-img {
-    width: 120px;
-    margin-left: 25%;
-}
-
-a:hover { 
-  background-color: transparent !important; 
-  text-decoration: none !important; 
-}
-
-.jumbotron {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-top: -20%;
+mat-card, .posts {
+  margin: 0 15% 0 15%;
 }
 
 .form-group {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
-
-.col-md-9, .col-sm-9 {
-  margin-top: 8%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-.col-lg-9, .col-xl-9 {
-  margin-top: 5%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-.jumbotron .row .col-sm-9, .col-md-9 {
-  padding-top: -10%;
-}
-
-.dropdown {
-  position: absolute;
-  padding-left: 80%;
-  font-size: 15px;
-} 
-
-.dropdown-menu {
-  position: absolute;
-  left: 91%;
-  min-width: 110px;
-} 
-
 p {
   vertical-align: center;
 }
 
-#posted {
-  font-size: 17px;
-}
-
-h3 {
-  /* text-align: center; */
-  margin-left: 25%;
-}
-
-@media (max-width: 767px) {
-  p, h3 {
-    text-align: center;
-    margin-left: 0px;
-  }
-
-  img {
-    display: block;
-    margin: auto;
-  }
-}
-
 button {
     margin-top: 15px;
-  }
-
-@media (max-width: 1000px) {
-  .dropdown {
-    position: absolute;
-    padding-left: 78.5%;
-    font-size: 15px;
-  } 
-
-  .dropdown-menu {
-    position: absolute;
-    left: 86%;
-  } 
-}
-
-@media (max-width: 767px) {
-  .dropdown {
-    position: absolute;
-    padding-left: 65%;
-    font-size: 15px;
-  } 
-
-  .dropdown-menu {
-    position: absolute;
-    left: 80.5%;
-  } 
 }
 
 .fa-cog {
@@ -118,15 +30,19 @@ button {
 }
 
 @media (max-width: 500px) {
-  .dropdown {
-    padding-left: 55%;
-  } 
-
-  .dropdown-menu {
-    left: 80.5%;
-  } 
-
   .fa-cog {
     margin-left: 37%;
+  }
+}
+
+@media (max-width: 767px) {
+  p, h3 {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  img {
+    display: block;
+    margin: auto;
   }
 }
