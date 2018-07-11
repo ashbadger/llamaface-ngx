@@ -6,6 +6,7 @@ import { Post } from '../core/post.model'
 import { PostService } from '../core/post.service'
 
 import { forEach, reject } from 'lodash';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -16,8 +17,8 @@ import { forEach, reject } from 'lodash';
 export class ProfileComponent implements OnInit {
 
   llama: Llama = new Llama();
+  user: Llama = new Llama();
   posts: Post[] = [];
-  user: Llama;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,33 +26,36 @@ export class ProfileComponent implements OnInit {
     private postService: PostService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const llamaId = '' + params.get('id');
-      this.fetchCurrentUser().subscribe((user) => {
-        this.user = user;
-        this.fetchLlamaProfile(llamaId);
-      });
+      this.fetchUserPosts(llamaId).pipe(
+        map((posts) => this.posts = posts),
+        map(() => this.fetchUserPosts(llamaId)),
+        map(() => this.fetchLlama(llamaId)),
+        map(() => this.fetchCurrentUser()),
+        map(() => this.attachUserstoPosts())
+      ).subscribe()
     });
+  }
+
+  fetchUserPosts(id) {
+    return this.postService.getUserPosts(id);
+  }
+
+  attachUserstoPosts() {
+    forEach(this.posts, (post) => {
+        post['user'] = this.llama;
+        post['canDelete'] = (post.user_id === this.user._id);
+    })
+  }
+
+  fetchLlama(id: string) {
+    return this.llamaService.getLlama(id).subscribe(llama => Object.assign(this.llama, llama));
   }
 
   fetchCurrentUser() {
-    return this.llamaService.getUser();
-  }
-
-  fetchLlamaProfile(id: string): void {
-    this.llamaService.getLlama(id).subscribe((llama) => {
-      this.llama = llama
-
-      this.postService.getUserPosts(id).subscribe((posts) => {
-        forEach(posts, (post) => {
-          post['user'] = this.llama;
-          post['canDelete'] = (this.user._id === post.user_id);
-        })
-
-        this.posts = posts
-      });
-    });
+    return this.llamaService.getUser().subscribe(user => this.user = user);
   }
 
   removePost(id: string): void {
