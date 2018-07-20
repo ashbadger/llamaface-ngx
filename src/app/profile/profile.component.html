@@ -16,15 +16,6 @@
     <mat-card class="header">
       <h3>Posts</h3>
     </mat-card>
-    <mat-card *ngIf="posts?.length == 0">
-      <div id="no-results" class="body">
-        <p id="no-posts">This llama hasn't posted anything yet!</p>
-      </div>
-    </mat-card>
-    <div fxLayout="column" fxLayoutGap="20px" class="posts">
-      <div *ngFor="let post of posts">
-        <app-post [post]="post" [canDelete]="post?.canDelete" (deletedPost)="removePost($event)"></app-post>
-      </div>
-    </div>
+    <app-post-list [userId]="llamaId"></app-post-list>
   </div>
 </div> 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 import { LlamaService } from '../core/llama.service';
 import { SearchService } from '../core/search.service'
@@ -13,7 +12,7 @@ import { Llama } from '../core/llama.model'
 })
 export class LlamasComponent implements OnInit {
 
-  llamas: Llama[] = [];
+  public llamas: Llama[] = [];
 
   constructor(
     private llamaService: LlamaService,

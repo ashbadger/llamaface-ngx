@@ -22,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
 import { LlamaResultComponent } from './shared/llama-result/llama-result.component';
 import { PostComponent } from './shared/post/post.component';
+import { PostListComponent } from './shared/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PostComponent } from './shared/post/post.component';
     NavbarComponent,
     PostsComponent,
     LlamaResultComponent,
-    PostComponent
+    PostComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,

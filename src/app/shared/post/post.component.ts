@@ -1,30 +1,28 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Llama } from '../../core/llama.model';
-import { Post } from '../../core/post.model';
+import { UserPost } from '../../core/post.model';
 import { PostService } from '../../core/post.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss'],
-  providers: [ PostService ],
+  styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
 
-  @Input() llama: Llama;
-  @Input() post: Post;
-  @Input() canDelete: Boolean;
+  @Input() llama: Llama = new Llama();
+  @Input() post: UserPost = new UserPost();
+  @Input() canDelete: Boolean = false;
   @Output() deletedPost = new EventEmitter();
+  @Output() savedPost = new EventEmitter();
 
-  constructor(
-    private postService: PostService,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  deletePost($event) {
+  deletePost($event: string) {
     return this.deletedPost.emit($event);
   }
 }

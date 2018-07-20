@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import * as queryString from 'query-string';
+import { stringify } from 'query-string';
 
 import { Llama } from './llama.model';
 
 @Injectable()
 export class LlamaService {
     private llamasUrl = 'https://llamaface-api.herokuapp.com/llamas'
-    private auth_header = {headers: new HttpHeaders().set('x-auth', localStorage.getItem('currentUser'))}
+    private auth_header = {
+        headers: new HttpHeaders().set('x-auth', localStorage.getItem('currentUser') as string)
+    }
 
     constructor(private http: HttpClient) {}
     getLlamas(params = {}): Observable<Llama[]> {
-        const paramsString = queryString.stringify(params);
+        const paramsString = stringify(params);
         const httpParams = new HttpParams({ fromString: paramsString });
         return this.http.get<Llama[]>(this.llamasUrl, {params: httpParams });
     }

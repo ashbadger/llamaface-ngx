@@ -1,4 +1,4 @@
-<mat-card *ngIf="post?.user" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0">
+<mat-card *ngIf="post.user" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0">
   <mat-toolbar>
     <span fxFlex="100"></span>
     <button mat-icon-button (click)="deletePost(post._id)" *ngIf="canDelete">

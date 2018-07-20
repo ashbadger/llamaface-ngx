@@ -1,0 +1,10 @@
+<div fxLayout="column" fxLayoutGap="20px" class="posts" *ngIf="postsLoadFinished">
+  <div *ngFor="let post of posts">
+    <app-post [post]="post" [canDelete]="post.canDelete" (deletedPost)="removePost($event)"></app-post>
+  </div>
+  <mat-card *ngIf="posts.length == 0">
+    <div id="no-results" class="body">
+      <p id="no-posts">There are no posts to show.</p>
+    </div>
+  </mat-card>
+</div>

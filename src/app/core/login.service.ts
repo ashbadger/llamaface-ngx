@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import * as queryString from 'query-string';
+import { HttpClient } from '@angular/common/http';
 
 import { Llama } from './llama.model';
 
 @Injectable()
 export class LoginService {
-    private loginUrl = 'https://llamaface-api.herokuapp.com/llamas/login'
+    private loginUrl = 'https://llamaface-api.herokuapp.com/llamas/login';
+    private llama: Llama = new Llama();
 
-    llama: Llama = new Llama();
+    constructor(
+        private http: HttpClient
+    ) {}
 
-    constructor(private http: HttpClient) {}
     login(llama: Llama) {
-        return this.http.post(this.loginUrl, llama)
+        return this.http.post(this.loginUrl, llama);
     }
 
     userLoggedIn() {
-        return localStorage.getItem('currentUser') ? true : false
+        return localStorage.getItem('currentUser') ? true : false;
     }
 }

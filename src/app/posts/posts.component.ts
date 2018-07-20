@@ -1,70 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { PostService } from '../core/post.service';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { LlamaService } from '../core/llama.service';
-import { Post } from '../core/post.model';
+import { UserPost } from '../core/post.model';
 import { Llama } from '../core/llama.model';
+import { PostListComponent } from '../shared/post-list/post-list.component';
 
-import { forEach } from 'lodash';
-import { map } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
-  providers: [ PostService, LlamaService ]
+  providers: [ LlamaService ]
 })
 export class PostsComponent implements OnInit {
 
-  posts: Post[] = [];
-  post: Post = new Post();
-  user: Llama = new Llama();
-  failedLogin: Boolean = undefined;
-  loaded: Boolean = false;
+  @ViewChild(PostListComponent) child: PostListComponent;
+
+  @Output() newPost = new EventEmitter<UserPost>();
+  public user: Llama = new Llama();
+  public post: UserPost = new UserPost();
+  public loaded: Boolean = false;
+  public failedLogin: Boolean = false;
 
   constructor(
-    private postService: PostService,
     private llamaService: LlamaService
   ) { }
 
   ngOnInit() {
-    this.fetchPosts().pipe(
-      map((posts) => this.posts = posts),
-      map(() => this.fetchCurrentUser()),
-      map(() => this.attachUserstoPosts()),
-      map(() => this.loaded = true)
-    ).subscribe()
-  }
-
-  fetchPosts() {
-    return this.postService.getPosts();
-  }
-
-  attachUserstoPosts() {
-    forEach(this.posts, (post) => {
-      this.fetchLlama(post.user_id).subscribe((llama) => {
-        post['user'] = llama;
-        post['canDelete'] = (post.user_id === this.user._id);
-      });
+    this.fetchCurrentUser().subscribe((user) => {
+      Object.assign(this.user, user);
+      this.post.user_id = this.user._id;
     })
   }
 
   fetchCurrentUser() {
-    return this.llamaService.getUser().subscribe((user) => {
-      this.user = user;
-    }, () => this.failedLogin = true);
+    return this.llamaService.getUser().pipe(
+      tap((user) => {
+        Object.assign(this.user, user);
+      }),
+      catchError(() => {
+        this.failedLogin = true;
+        return EMPTY;
+      })
+    );
   }
 
-  fetchLlama(id: string) {
-    return this.llamaService.getLlama(id);
+  postsLoaded($event: Boolean) {
+    return this.loaded = $event;
   }
 
-  savePost(post: Post) {
-    post['user_id'] = this.user._id;
-    this.postService.createPost(post).subscribe(() => this.fetchPosts());
-  }
-
-  removePost(id: string) {
-    this.postService.deletePost(id).subscribe(() => this.fetchPosts());
+  savePost(post: UserPost) {
+    return this.child.savePost(post);
   }
 }

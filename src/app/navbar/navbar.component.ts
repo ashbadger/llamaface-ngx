@@ -1,45 +1,36 @@
-import { SearchService } from '../core/search.service';
 import { LlamaService } from '../core/llama.service';
 import { Llama } from '../core/llama.model';
 
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { FormControl } from '@angular/forms';
-
-import { HttpClient, HttpParams } from '@angular/common/http';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  providers: [ SearchService, LlamaService ]
+  providers: [ LlamaService ]
 })
 export class NavbarComponent implements OnInit {
 
-  llamas: Llama[] = [];
-  user: Llama;
-  public query: string;
-
-  searchCtrl: FormControl;
+  public user: Llama = new Llama();
+  public query = '';
 
   constructor(
-    private searchService: SearchService,
-    private llamaService: LlamaService,
+    private router: Router,
     private route: ActivatedRoute,
-    private router: Router
+    private llamaService: LlamaService,
   ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((query) => this.query = query.q);
-    this.fetchUser();
+    this.fetchUser().subscribe(user => Object.assign(this.user, user));
   }
 
   logout() {
     this.llamaService.removeAuthToken().subscribe(() => {
       localStorage.removeItem('currentUser');
       this.router.navigate(['/login']);
-    }, (err) => this.router.navigate(['/login']));
+    }, () => this.router.navigate(['/login']));
   }
 
   searchLlamas() {
@@ -47,6 +38,6 @@ export class NavbarComponent implements OnInit {
   }
 
   fetchUser() {
-    this.llamaService.getUser().subscribe(user => this.user = user)
+    return this.llamaService.getUser();
   }
 }

@@ -3,9 +3,13 @@ import { LlamaService } from '../../core/llama.service'
 import { LoginService } from '../../core/login.service'
 import { Llama } from '../../core/llama.model'
 import { Router } from '@angular/router'
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { FormGroup, Validators, FormBuilder } from '@angular/forms'
 
 import { update } from 'lodash';
+
+class Token {
+  token: string;
+}
 
 @Component({
   selector: 'app-signup-box',
@@ -15,10 +19,10 @@ import { update } from 'lodash';
 })
 export class SignupBoxComponent implements OnInit {
 
-  llama: Llama = new Llama();
-  alreadyExists;
-  requiredFields;
-  llamaForm;
+  public llama: Llama = new Llama();
+  public alreadyExists: Boolean = false;
+  public requiredFields: Boolean = true;
+  public llamaForm: FormGroup;
 
   constructor(
     private llamaService: LlamaService,
@@ -28,21 +32,19 @@ export class SignupBoxComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.requiredFields = true;
-
     this.llamaForm = this.fb.group({
       'name': ['', [Validators.required, Validators.minLength(4)]],
       'email': ['', [Validators.required, Validators.email]],
       'password': this.fb.group({
         password: ['', [Validators.required]],
         confirm_password: ['', [Validators.required]]
-      }, {validator: this.passwordMatchValidator})
+      }, { validator: this.passwordMatchValidator })
     });
   }
 
-  passwordMatchValidator(g: FormGroup) {
-    return g.get('password').value === g.get('confirm_password').value
-       ? null : {'mismatch': true};
+  passwordMatchValidator(formGroup: FormGroup) {
+    return formGroup.get('password').value === formGroup.get('confirm_password').value
+       ? null : { 'mismatch': true };
   }
 
   addLlama(): void {
@@ -66,7 +68,7 @@ export class SignupBoxComponent implements OnInit {
 
     return this.loginService.login(llama)
       .subscribe((res) => {
-        localStorage.setItem('currentUser', res['token'])
+        localStorage.setItem('currentUser', (res as Token)['token'])
         this.router.navigate(['/account']);
       })
   }

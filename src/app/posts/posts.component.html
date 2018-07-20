@@ -3,28 +3,41 @@
   <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
   <p>waiting on heroku dyno to wake up...</p>
 </div>
-<div id="content" *ngIf="loaded" fxLayout="column" fxLayoutGap="20px">
-  <mat-card>
-    <div *ngIf="failedLogin == true" class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="form-group">
-            <textarea type="text" id="post" name="post" class="form-control" style="resize:vertical; text-align: center;" placeholder="You must login to post" disabled></textarea>
-            <button class="btn btn-danger btn-block" disabled>Post</button>
+<div fxLayout="column" fxLayoutGap="20px">
+  <div id="content" *ngIf="loaded" fxLayout="column" fxLayoutGap="20px">
+    <mat-card>
+      <div *ngIf="failedLogin == true" class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="form-group">
+              <textarea 
+                type="text" 
+                id="post" 
+                name="post" 
+                class="form-control" 
+                style="resize:vertical; text-align: center;" 
+                placeholder="You must login to post" disabled>
+              </textarea>
+              <button class="btn btn-danger btn-block" disabled>Post</button>
+          </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="user?.name" class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="form-group">
-            <textarea [(ngModel)]="post.text" type="text" id="post" name="post" class="form-control" style="resize:vertical" placeholder="What's on your mind, {{ user?.name }}?"></textarea>
-            <button (click)="savePost(post); post.text = ''" type="submit" class="btn btn-primary btn-block">Post</button>
+      <div *ngIf="user.name" class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="form-group">
+              <textarea 
+                [(ngModel)]="post.text" 
+                type="text" 
+                id="post" 
+                name="post" 
+                class="form-control" 
+                style="resize:vertical" 
+                placeholder="What's on your mind, {{ user.name }}?">
+              </textarea>
+              <button (click)="savePost(post); post.text = ''" type="submit" class="btn btn-primary btn-block">Post</button>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-card>
-  <div fxLayout="column" fxLayoutGap="20px" class="posts">
-    <div *ngFor="let post of posts">
-      <app-post [post]="post" [canDelete]="post?.canDelete" (deletedPost)="removePost($event)"></app-post>
-    </div>
+    </mat-card>
   </div>
+  <app-post-list (loaded)="postsLoaded($event)" [newPost]="post"></app-post-list>
 </div>

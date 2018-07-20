@@ -1,9 +1,12 @@
-import { Services } from '@angular/core/src/view';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { LoginService } from '../../core/login.service'
 import { Llama } from '../../core/llama.model'
+
+class Token {
+  token: string;
+}
 
 @Component({
   selector: 'app-login-box',
@@ -13,8 +16,8 @@ import { Llama } from '../../core/llama.model'
 })
 export class LoginBoxComponent implements OnInit {
 
-  llama: Llama = new Llama();
-  failedAttempt;
+  public llama: Llama = new Llama();
+  public failedAttempt: Boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -28,9 +31,9 @@ export class LoginBoxComponent implements OnInit {
 
     return this.loginService.login(llama)
       .subscribe((res) => {
-        localStorage.setItem('currentUser', res['token']);
+        localStorage.setItem('currentUser', (res as Token)['token']);
         this.router.navigate(['/posts']);
-      }, (error) => {
+      }, () => {
         this.failedAttempt = true;
       })
   }

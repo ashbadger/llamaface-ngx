@@ -12,8 +12,8 @@ import { PostService } from '../core/post.service'
 })
 export class AccountDetailsComponent implements OnInit {
 
-  llama: Llama = new Llama();
-  saved = false;
+  public llama: Llama = new Llama();
+  public saved: Boolean = false;
 
   constructor(
     private llamaService: LlamaService,
