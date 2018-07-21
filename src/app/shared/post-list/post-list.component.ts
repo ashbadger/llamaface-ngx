@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, Input, EventEmitter, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { from, concat, EMPTY } from 'rxjs';
-import { map, switchMap, tap, concatMap, catchError } from 'rxjs/operators';
+import { map, switchMap, tap, concatMap, catchError, filter } from 'rxjs/operators';
 import { reject } from 'lodash';
 
 import { PostService } from '../../core/post.service';
@@ -25,10 +25,10 @@ export class PostListComponent implements OnInit {
   @Output() loaded = new EventEmitter<Boolean>();
   @Input() userId = '';
   @Input()
-  set newPost(post: UserPost){
+  set newPost(post: UserPost) {
     Object.assign(this._newPost, post);
   }
-  get newPost(){
+  get newPost() {
     return this._newPost;
   }
 
@@ -40,12 +40,14 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     concat(
       this.fetchCurrentUser(),
-      this.fetchPosts()
+      this.fetchPosts(),
     )
+    .pipe(filter((post) => post.hasOwnProperty('text')))
     .subscribe((post) => {
       this.posts.push(post as UserPost);
-      this.emitLoaded();
-    })
+    },
+    (err) => console.log(err),
+    () => this.emitLoaded())
   }
 
   fetchPosts() {

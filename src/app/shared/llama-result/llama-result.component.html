@@ -1,4 +1,4 @@
-<mat-card fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0">
+<mat-card fxLayout="row wrap" fxLayoutGap="20px" fxLayoutGap.xs="0" fxLayoutGap.sm="0" [@llamaLoaded]="llama">
   <div class="picture-card" fxLayout="column" fxFlex="30%">
     <a href="llamas/{{ llama._id }}">
       <img src="{{ llama.picture_url}}">

@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchResultsComponent implements OnInit {
 
   public llamas: Llama[] = [];
+  public llamasLoaded: Boolean = false;
   public query = '';
 
   constructor(
@@ -28,7 +29,10 @@ export class SearchResultsComponent implements OnInit {
       const httpParams = new HttpParams();
       httpParams.set('q', this.query);
 
-      this.getSearch().subscribe(llamas => this.llamas = llamas);
+      this.getSearch().subscribe((llamas) => {
+        this.llamas = llamas;
+        this.llamasLoaded = true;
+      });
     })
   }
 

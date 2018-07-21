@@ -1,13 +1,19 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, transition, animate, style } from '../../../../node_modules/@angular/animations';
 
 import { Llama } from '../../core/llama.model';
 import { UserPost } from '../../core/post.model';
-import { PostService } from '../../core/post.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
+  animations: [
+    trigger('postsLoaded', [
+      state('void', style({opacity: 0})),
+      transition('* <=> *', animate('400ms ease-in')
+    )
+  ])]
 })
 export class PostComponent implements OnInit {
 

@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div id="no-results" *ngIf="llamas?.length == 0">
+<div id="no-results" *ngIf="llamas.length == 0 && llamasLoaded">
   <mat-card>
     <mat-card-header fxLayoutAlign="center center">
       <mat-card-title>

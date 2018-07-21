@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 $red: #ff3e3e;
 $light-grey: #eee;
 
@@ -11,7 +13,7 @@ body {
 }
 
 mat-card {
-    background: $light-grey;
+    background: $light-grey !important;
 }
 
 a {
