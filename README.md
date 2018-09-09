@@ -1,6 +1,6 @@
 ![logo](https://github.com/ashbadger/llamaface-ng2/blob/master/src/assets/images/logo.png?raw=true)
 
-[![Build Status](https://travis-ci.org/ashbadger/llamaface-ng2.svg?branch=master)](https://travis-ci.org/ashbadger/llamaface-ng2)
+[![Build Status](https://travis-ci.org/ashbadger/llamaface-ngx.svg?branch=master)](https://travis-ci.org/ashbadger/llamaface-ngx)
 
 llamaFace is f*cebook for llamas.
 
