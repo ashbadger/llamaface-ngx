@@ -9,5 +9,3 @@ this is a full stack project. backend can be found (mongodb, express) here: [lla
 **functionality**: create an account, edit/delete user account, search for users, view user profiles, make/delete posts.
 
 **technologies**: angular 6, jwt, rxjs, typescript, material, s3, travis ci.
-
-llamaFace front end is hosted via S3. view it [here](http://llamaface-ng2.s3-website-us-east-1.amazonaws.com/posts).
